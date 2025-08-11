@@ -78,6 +78,33 @@ jobs:
           publish_dir: ./dist
 ```
 
+### GitHub Pages 설정 가이드
+- Repo → Settings → Pages
+  - Source: Deploy from a branch
+  - Branch: `gh-pages` / `(root)` 선택 → Save
+  - Enforce HTTPS: 체크
+- Repo → Settings → Actions → General
+  - Workflow permissions: Read and write permissions 선택(gh-pages 푸시 권한)
+- 첫 배포 전: main 브랜치에 커밋/푸시 → Actions가 `gh-pages` 생성 → 위 Pages 화면에서 `gh-pages`를 지정
+
+프로젝트 사이트(서브패스) 주의사항
+- 레포가 사용자/조직 사이트가 아니라면 최종 URL은 `https://{username}.github.io/{repo}/` 형태입니다.
+- 이 경우 Astro에 base를 지정하고, 정적 경로는 `import.meta.env.BASE_URL`을 사용하세요.
+
+`astro.config.mjs`
+```js
+import { defineConfig } from 'astro/config';
+export default defineConfig({ output: 'static', base: '/<repo>/' });
+```
+
+코드에서의 경로 예시
+```js
+// 데이터 로드
+fetch(`${import.meta.env.BASE_URL}index.json`)
+// 상세 링크
+const href = `${import.meta.env.BASE_URL}post/${slug}`
+```
+
 ### 데이터 파싱 규칙
 - 프론트매터가 없을 경우, 본문 상단 라벨을 파싱하여 메타로 변환합니다.
   - `# 제목`, `발견일: YYYY/MM/DD`, `원문 URL: ...`, `분류: ...`, `원문 Source: ...`, `즐겨찾기: Yes|No`
