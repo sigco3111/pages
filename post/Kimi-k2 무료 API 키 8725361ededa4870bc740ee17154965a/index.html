@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>상세</title></head> <body class="container" style="padding:24px;max-width:900px"> <a href="/" aria-label="홈으로">← 홈</a> <h1 style="margin:8px 0 4px"></h1>  <article style="margin-top:16px"> <h1 id="kimi-k2-무료-api-키">Kimi-k2 무료 API 키</h1>
+<p>발견일: 2025/07/28
+원문 URL: <a href="https://medium.com/data-science-in-your-pocket/kimi-k2-free-api-key-fb4a28900d4b">https://medium.com/data-science-in-your-pocket/kimi-k2-free-api-key-fb4a28900d4b</a>
+분류: TIP
+원문 Source: 🔗medium
+즐겨찾기: No</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1200/1*kmdPBm_FAzulvRDdztsP6Q.png" alt=""></p>
+<h2 id="how-to-get-kimi-k2-free-api-key">How to get Kimi-K2 free API key ?</h2>
+<p>Kimi-K2 무료 API 키를 얻는 방법은 무엇입니까?</p>
+<p><img src="https://miro.medium.com/v2/resize:fill:64:64/1*vyvhK_h4zA05mg_Y-n2qBA.jpeg" alt=""></p>
+<p><a href="https://medium.com/@mehulgupta_7991?source=post_page---byline--fb4a28900d4b---------------------------------------">Mehul Gupta</a></p>
+<p>Follow</p>
+<p>3 min read</p>
+<p>Jul 16, 2025</p>
+<p>261</p>
+<p>3</p>
+<p><a href="https://medium.com/plans?dimension=post_audio_button&#x26;postId=fb4a28900d4b&#x26;source=upgrade_membership---post_audio_button-----------------------------------------">Listen</a></p>
+<p>Share</p>
+<p>More</p>
+<p>We had a mini Deep Seek moment a few days back where Moonshot AI has released Kimi K2, the first 1 trillion parameter open source model. Alongside it’s not just this huge, it is also the best open source model now, beating out Claude 4 Sonnet, GPT 4.1, and DeepSeek V3.
+며칠 전 Moonshot AI가 최초의 1조 매개변수 오픈 소스 모델인 Kimi K2를 출시한 미니 Deep Seek 순간이 있었습니다. 이렇게 거대할 뿐만 아니라 Claude 4 Sonnet, GPT 4.1 및 DeepSeek V3를 능가하는 현재 최고의 오픈 소스 모델이기도 합니다.</p>
+<blockquote>
+<p>Unfortunately, even though the model is completely open source, most of the folks won’t be able to use it because of its high GPU requirements. Running a 1-trillion parameter model is no joke.
+불행히도 모델이 완전히 오픈 소스임에도 불구하고 GPU 요구 사항이 높기 때문에 대부분의 사람들이 사용할 수 없습니다. 1조 개의 매개변수 모델을 실행하는 것은 농담이 아닙니다.</p>
+</blockquote>
+<p>But you can still run the model in your programs using the free API key that I’m going to tell you in this particular blog post, and this is not a clickbait.
+그러나 이 특정 블로그 게시물에서 알려드릴 무료 API 키를 사용하여 프로그램에서 모델을 계속 실행할 수 있으며 이것은 클릭베이트가 아닙니다.</p>
+<blockquote>
+<p>My new book on MCP Servers is live
+MCP 서버에 대한 새 책이 출시되었습니다.</p>
+</blockquote>
+<p><a href="https://www.amazon.com/gp/product/B0FCCF348X?source=post_page-----fb4a28900d4b---------------------------------------">Model Context Protocol: Advanced AI Agents for Beginners (Generative AI books)</a>
+<a href="https://www.amazon.com/gp/product/B0FCCF348X?source=post_page-----fb4a28900d4b---------------------------------------">모델 컨텍스트 프로토콜: 초보자를 위한 고급 AI 에이전트(생성형 AI 서적)</a>
+<a href="https://www.amazon.com/gp/product/B0FCCF348X?source=post_page-----fb4a28900d4b---------------------------------------">----------------------------------------------------------------------------------------------------------------------------</a></p>
+<h3 id="amazoncom-model-context-protocol-advanced-ai-agents-for-beginners-generative-ai-books-ebook--gupta-mehul-sen"><a href="https://www.amazon.com/gp/product/B0FCCF348X?source=post_page-----fb4a28900d4b---------------------------------------">Amazon.com: Model Context Protocol: Advanced AI Agents for Beginners (Generative AI books) eBook : Gupta, Mehul, Sen…</a></h3>
+<p><a href="https://www.amazon.com/gp/product/B0FCCF348X?source=post_page-----fb4a28900d4b---------------------------------------">Amazon.com: 모델 컨텍스트 프로토콜: 초보자를 위한 고급 AI 에이전트(생성 AI 책) 전자책: 굽타, 메훌, 센…</a></p>
+<p><a href="https://www.amazon.com/gp/product/B0FCCF348X?source=post_page-----fb4a28900d4b---------------------------------------">www.amazon.com</a></p>
+<blockquote>
+<p>So before we jump on to let me tell you
+그래서 우리가 당신에게 말하기 전에</p>
+</blockquote>
+<h1 id="what-is-openrouter-openrouter란-무엇입니까">What is OpenRouter? OpenRouter란 무엇입니까?</h1>
+<p>O<strong>penRouter</strong> is basically a central hub that lets you access a bunch of different language models, <em>through one unified API</em>. Think of it like a router for AI models. Instead of going to OpenAI for GPT, Anthropic for Claude, Mistral for Mixtral, Moonshot for Kimi-K2, etc., you just hit OpenRouter and choose which model you want to use.
+영형<strong>펜라우터</strong> 기본적으로 <em>하나의 통합 API를 통해</em> 다양한 언어 모델에 액세스할 수 있는 중앙 허브입니다. AI 모델을 위한 라우터라고 생각하세요. GPT의 경우 OpenAI, Claude의 경우 Anthropic, Mixtral의 경우 Mistral, Kimi-K2의 경우 Moonshot 등으로 이동하는 대신 OpenRouter를 누르고 사용할 모델을 선택하기만 하면 됩니다.</p>
+<p>Here’s what it <em>actually</em> does:
+<em>실제로</em> 수행하는 작업은 다음과 같습니다.</p>
+<ul>
+<li>It lets you test and use <strong>LLMs from different companies</strong> through a single endpoint.
+단일 엔드포인트를 통해 <strong>여러 회사의 LLM을</strong> 테스트하고 사용할 수 있습니다.</li>
+<li>It handles all the <strong>routing</strong> behind the scenes — whether you want GPT-4, Claude, Mistral, or Kimi-K2.
+GPT-4, Claude, Mistral 또는 Kimi-K2를 원하는지 여부에 관계없이 모든 <strong>라우팅</strong>을 배후에서 처리합니다.</li>
+<li>You get <strong>API keys</strong> that work across multiple models. That means fewer tokens to manage, less setup.
+여러 모델에서 작동하는 <strong>API 키를</strong> 얻을 수 있습니다. 이는 관리해야 할 토큰 수가 적고 설정이 적다는 것을 의미합니다.</li>
+</ul>
+<blockquote>
+<p>And here’s the <strong>real kicker</strong>: some of the models, like <strong>Kimi-K2</strong>, are made free by their providers <strong>via OpenRouter</strong> — not available for free anywhere else. They also often list <strong>token prices up-front</strong>, so no billing surprises.
+그리고 <strong>진짜 키커</strong>는 <strong>Kimi-K2</strong>와 같은 일부 모델은 <strong>OpenRouter를 통해</strong> 공급자가 무료로 제공하며 다른 곳에서는 무료로 사용할 수 없다는 것입니다. 또한 <strong>토큰 가격을 미리</strong> 나열하는 경우가 많으므로 청구 놀라움이 없습니다.</p>
+</blockquote>
+<h1 id="how-to-get-kimi-k2-free-api">How to get Kimi-K2 Free API?</h1>
+<p>Kimi-K2 무료 API를 얻는 방법은 무엇입니까?</p>
+<ul>
+<li>Go to OpenRouter OpenRouter로 이동</li>
+</ul>
+<p><a href="https://openrouter.ai/?source=post_page-----fb4a28900d4b---------------------------------------">OpenRouter 오픈라우터</a>
+<a href="https://openrouter.ai/?source=post_page-----fb4a28900d4b---------------------------------------">----------------</a></p>
+<h3 id="the-unified-interface-for-llms-find-the-best-models--prices-for-your-prompts"><a href="https://openrouter.ai/?source=post_page-----fb4a28900d4b---------------------------------------">The unified interface for LLMs. Find the best models &#x26; prices for your prompts</a></h3>
+<p><a href="https://openrouter.ai/?source=post_page-----fb4a28900d4b---------------------------------------">LLM을 위한 통합 인터페이스. 프롬프트에 가장 적합한 모델 및 가격 찾기</a></p>
+<p><a href="https://openrouter.ai/?source=post_page-----fb4a28900d4b---------------------------------------">openrouter.ai</a></p>
+<ul>
+<li>Search for kimi-k2 kimi-k2 검색</li>
+</ul>
+<p>Press enter or click to view image in full size</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:700/1*qH7EE555zzBUFqB_UXKwmQ.png" alt=""></p>
+<ul>
+<li>Go to API section and create API
+API 섹션으로 이동하여 API 생성</li>
+</ul>
+<p>Press enter or click to view image in full size</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:700/1*vVPLBICq9fj3ylWqudh1Hg.png" alt=""></p>
+<ul>
+<li>Copy the codes from the page. One sample code is below as well. Replace your API key
+페이지에서 코드를 복사합니다. 하나의 샘플 코드도 아래에 있습니다. API 키 바꾸기</li>
+</ul>
+<p>import requests
+import json</p>
+<p>response = requests.post(
+url=“<a href="https://openrouter.ai/api/v1/chat/completions">https://openrouter.ai/api/v1/chat/completions</a>”,
+headers={
+“Authorization”: “Bearer {}“.format(api),
+“Content-Type”: “application/json”,
+“HTTP-Referer”: “&#x3C;YOUR_SITE_URL>”,
+“X-Title”: “&#x3C;YOUR_SITE_NAME>”,
+},
+data=json.dumps({
+“model”: “moonshotai/kimi-k2:free”,
+“messages”: [
+{
+“role”: “user”,
+“content”: “What is 23-56-9”
+}
+],</p>
+<p>})
+)
+print(response.text.replace(“\n”,"").strip())</p>
+<ul>
+<li>Run the codes and hurray, you got the free API
+코드를 실행하고 만세, 무료 API를 얻었습니다.</li>
+</ul>
+<p>Press enter or click to view image in full size</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:700/1*9qNRqqXzX9o9qqWwswOdlg.png" alt=""></p>
+<blockquote>
+<p>hope you try out Kimi K2 now!
+지금 Kimi K2를 사용해 보시기 바랍니다!</p>
+</blockquote>
+<p>If you just wish to chat, you can try these options as well mentioned in the below video
+채팅만 하고 싶다면 아래 비디오에 언급된 이러한 옵션을 시도해 볼 수 있습니다</p> </article> </body></html>

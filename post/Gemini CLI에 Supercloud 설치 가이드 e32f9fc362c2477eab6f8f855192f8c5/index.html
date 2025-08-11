@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>상세</title></head> <body class="container" style="padding:24px;max-width:900px"> <a href="/" aria-label="홈으로">← 홈</a> <h1 style="margin:8px 0 4px"></h1>  <article style="margin-top:16px"> <h1 id="gemini-cli에-supercloud-설치-가이드">Gemini CLI에 Supercloud 설치 가이드</h1>
+<p>발견일: 2025/08/07
+원문 URL: <a href="https://www.youtube.com/watch?v=whLEc7lO_xY&#x26;list=PLoSIoPWNjwhLctI2K8DcKKxHQwUaEWfBi&#x26;ab_channel=%EC%86%8C%EC%8A%A4%EB%86%80%EC%9D%B4%ED%84%B0">https://www.youtube.com/watch?v=whLEc7lO_xY&#x26;list=PLoSIoPWNjwhLctI2K8DcKKxHQwUaEWfBi&#x26;ab_channel=%EC%86%8C%EC%8A%A4%EB%86%80%EC%9D%B4%ED%84%B0</a>
+분류: TIP
+원문 Source: 🔗youtube
+즐겨찾기: No</p>
+<p><img src="https://i.ytimg.com/vi/whLEc7lO_xY/maxresdefault.jpg" alt=""></p>
+<p>출처 : <a href="https://www.youtube.com/watch?v=whLEc7lO_xY&#x26;list=PLoSIoPWNjwhLctI2K8DcKKxHQwUaEWfBi&#x26;ab_channel=%EC%86%8C%EC%8A%A4%EB%86%80%EC%9D%B4%ED%84%B0">유튜브 링크</a></p>
+<p>Supercloud는 토큰 소모가 단점이지만 뛰어난 성능을 제공하며, Gemini CLI는 방대한 컨텍스트 크기가 장점입니다. 이 둘을 조합하면 단점을 상호 보완하여 최적의 환경을 구축할 수 있습니다. 아래는 Gemini CLI에 Supercloud를 설치하는  가이드입니다.</p>
+<hr>
+<h2 id="1-gemini-cli-설치">1. Gemini CLI 설치</h2>
+<ol>
+<li><strong>명령 프롬프트 실행</strong>
+<ul>
+<li>명령 프롬프트를 엽니다.</li>
+</ul>
+</li>
+<li><strong>Gemini CLI 설치</strong>
+<ul>
+<li>소스에 명시된 설치 명령어를 입력하여 Gemini CLI를 설치합니다.</li>
+<li><em>참고</em>: 소스에 구체적인 명령어가 없으므로, 공식 문서나 제공된 명령어를 확인하세요.</li>
+</ul>
+</li>
+<li><strong>설치 확인</strong>
+<ul>
+<li>설치 완료 후, 명령 프롬프트에서 <code>gemini</code>를 입력하여 실행 여부를 확인합니다.</li>
+<li>최초 실행 시 Google 로그인 과정이 나타날 수 있습니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="2-supercloud-파일을-gemini-cli-형식으로-이전">2. Supercloud 파일을 Gemini CLI 형식으로 이전</h2>
+<p>Supercloud의 핵심 파일은 사용자 디렉토리의 <code>.cloud</code> 폴더에 마크다운 형태로 저장되어 있습니다. 이를 Gemini CLI가 인식할 수 있도록 <code>.gemini</code> 폴더로 이전합니다.</p>
+<ol>
+<li><strong>사용자 디렉토리 이동</strong>
+<ul>
+<li>사용자 디렉토리로 이동하여 <code>.cloud</code>와 <code>.gemini</code> 폴더를 확인합니다.</li>
+</ul>
+</li>
+<li><strong>파일 복사</strong>
+<ul>
+<li><code>.cloud</code> 폴더 내 모든 파일(총 9개)을 <code>.gemini</code> 폴더로 복사합니다.</li>
+<li><code>cloud.md</code> 파일을 열어 내용을 복사한 뒤, <code>gemini.md</code> 파일에 붙여넣습니다.</li>
+<li>작업 완료 후 <code>cloud.md</code> 파일을 삭제합니다.</li>
+</ul>
+</li>
+<li><strong>커스텀 명령어 설정</strong>
+<ul>
+<li><code>.cloud</code> 폴더 내 <code>commands</code> 폴더로 이동합니다.</li>
+<li><code>SC</code> 폴더를 통째로 복사합니다.</li>
+<li><code>.gemini</code> 폴더에 새 <code>commands</code> 폴더를 생성한 뒤, 복사한 <code>SC</code> 폴더를 붙여넣습니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="3-monorepo-에러-해결">3. Monorepo 에러 해결</h2>
+<p>파일 이전 후 <code>gemini</code> 실행 시 <code>monorepo</code> 관련 에러가 발생할 수 있습니다.</p>
+<ol>
+<li><a href="http://orchestra.md/">**orchestra.md</a> 파일 편집**
+<ul>
+<li><code>.gemini</code> 폴더로 이동하여 <code>orchestra.md</code> 파일을 편집기로 엽니다.</li>
+<li>파일 내에서 <code>monorepo</code>를 검색하면 <code>@</code> 기호와 함께 나타납니다.</li>
+<li>Gemini는 <code>@</code> 뒤의 내용을 파일로 인식하므로, <code>@</code> 기호를 삭제하고 저장합니다.</li>
+</ul>
+</li>
+<li><strong>실행 확인</strong>
+<ul>
+<li>다시 <code>gemini</code>를 실행하여 에러가 해결되었는지 확인합니다.</li>
+<li><code>/memory show</code> 명령어를 입력하여 지침 내용이 정상적으로 표시되는지 확인합니다.</li>
+<li><em>참고</em>: <code>/SC</code> 명령어는 아직 표시되지 않을 수 있습니다. 이는 파일 형식이 Gemini CLI에 맞지 않기 때문입니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="4-마크다운-파일을-tol-파일로-변환">4. 마크다운 파일을 TOL 파일로 변환</h2>
+<p>Supercloud의 마크다운 명령어 파일을 Gemini CLI 형식인 TOL 파일로 변환해야 합니다.</p>
+<ol>
+<li><strong>자동화 스크립트 사용</strong>
+<ul>
+<li>소스(보통 영상 댓글 등)에서 제공된 자동화 스크립트 내용을 복사합니다.</li>
+<li><code>gemini</code>를 실행한 뒤, 복사한 내용을 붙여넣고 엔터를 누릅니다.</li>
+</ul>
+</li>
+<li><strong>변환 진행</strong>
+<ul>
+<li>스크립트가 마크다운 파일을 TOL 파일로 변환하며, Gemini CLI에 맞게 내용을 조정합니다.</li>
+<li>변환은 약 5분 정도 소요됩니다.</li>
+</ul>
+</li>
+<li><strong>변환 확인</strong>
+<ul>
+<li>변환 완료 후, <code>commands</code> 폴더에서 TOL 파일이 정상적으로 생성되었는지 확인합니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="5-설치-완료-확인">5. 설치 완료 확인</h2>
+<ol>
+<li><strong>Gemini CLI 실행</strong>
+<ul>
+<li><code>gemini</code>를 입력하여 실행합니다.</li>
+</ul>
+</li>
+<li><strong>Supercloud 명령어 확인</strong>
+<ul>
+<li><code>/SC</code>를 입력하여 Supercloud의 모든 명령어가 정상적으로 표시되는지 확인합니다.</li>
+<li>이상 없이 표시되면 Gemini CLI에 Supercloud 설치가 완료된 것입니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="6-추가-꿀팁-claude-코드를-활용한-mcp-자동-설치">6. 추가 꿀팁: Claude 코드를 활용한 MCP 자동 설치</h2>
+<p>Gemini는 외부 도구 사용이 서툴러 자동화가 어렵지만, Claude 코드를 활용하여 MCP(Multiple Code Producer)를 자동 설치할 수 있습니다.</p>
+<ol>
+<li><strong>파일 생성</strong>
+<ul>
+<li>VS Code에서 새 파일을 엽니다.</li>
+<li>소스(영상 댓글 등)에서 제공된 내용을 복사하여 붙여넣습니다.</li>
+<li>파일을 작업 폴더에 <code>cloud.md</code>로 저장합니다.</li>
+</ul>
+</li>
+<li><strong>Claude 코드 실행</strong>
+<ul>
+<li>명령 프롬프트에서 작업 폴더로 이동한 뒤, <code>cloud</code>를 입력하여 Claude 코드를 실행합니다.</li>
+<li>설치하고 싶은 MCP(예: 시퀀셜 MCP, 컨텍스트 7 MCP)를 지정합니다.</li>
+<li>설치가 완료될 때까지 기다립니다.</li>
+</ul>
+</li>
+<li><strong>MCP 설치 확인</strong>
+<ul>
+<li><code>gemini</code>를 실행하고 <code>/MCP</code>를 입력하여 설치된 MCP가 정상적으로 표시되는지 확인합니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>이 가이드를 따라 하면 Gemini CLI에 Supercloud를 성공적으로 설치하고, MCP까지 자동으로 설정할 수 있습니다. 추가 질문이 있다면 언제든지 문의하세요!</p> </article> </body></html>
