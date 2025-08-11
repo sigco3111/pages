@@ -1,0 +1,88 @@
+---
+/**
+ * 목적: 홈 그리드 페이지. index.json을 로드하여 카드 리스트/검색/카테고리 필터를 제공한다.
+ */
+import '../styles/global.css';
+import Card from '../../src/components/Card.astro';
+const SITE_TITLE = 'AI 뉴스 보드';
+---
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{SITE_TITLE}</title>
+  </head>
+  <body>
+    <header>
+      <div class="container" style="display:flex;gap:12px;align-items:center;justify-content:space-between;">
+        <strong>{SITE_TITLE}</strong>
+        <input id="q" class="searchbar" placeholder="검색: 제목, 분류, 원문…" aria-label="전역 검색" />
+      </div>
+      <div class="container">
+        <div id="tabs" class="tabs" role="tablist" aria-label="카테고리 필터"></div>
+      </div>
+    </header>
+    <main class="container">
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </main>
+
+    <script type="module">
+      // 목적: index.json을 로드하고 Fuse.js로 클라이언트 검색/필터를 제공한다.
+      import Fuse from '/node_modules/fuse.js/dist/fuse.js';
+
+      const state = { items: [], filtered: [], category: 'ALL', query: '' };
+      const grid = document.getElementById('grid');
+      const tabs = document.getElementById('tabs');
+      const q = document.getElementById('q');
+
+      function render() {
+        grid.innerHTML = state.filtered.map(item => `
+          <a class="card" href="/post/${item.slug}" aria-label="${item.title} 상세 보기">
+            ${item.thumbnail ? `<img class="thumb" src="${item.thumbnail}" alt="" loading="lazy" />` : `<div class="thumb"></div>`}
+            <div class="meta">${item.category ? `<span class=tab>${item.category}</span>` : ''}${item.date ? `<span>${item.date}</span>` : ''}</div>
+            <div class="title">${item.title}</div>
+          </a>
+        `).join('');
+      }
+
+      function renderTabs(categories) {
+        tabs.innerHTML = ['ALL', ...categories].map(cat => `
+          <button class="tab ${state.category===cat?'active':''}" data-cat="${cat}" role="tab" aria-selected="${state.category===cat}">${cat}</button>
+        `).join('');
+      }
+
+      function applyFilters() {
+        let list = state.items;
+        if (state.category !== 'ALL') list = list.filter(i => i.category === state.category);
+        if (state.query) {
+          const fuse = new Fuse(list, { keys: ['title','category','source_name','source_url','excerpt'], threshold: 0.35 });
+          list = fuse.search(state.query).map(r => r.item);
+        }
+        state.filtered = list;
+        render();
+      }
+
+      function debounce(fn, ms) { let t; return (...args) => { clearTimeout(t); t = setTimeout(()=>fn(...args), ms); }; }
+
+      // 초기화
+      fetch('/index.json').then(r => r.json()).then(data => {
+        state.items = data.items || [];
+        const cats = Array.from(new Set(state.items.map(i => i.category).filter(Boolean))).sort();
+        renderTabs(cats);
+        applyFilters();
+      });
+
+      tabs.addEventListener('click', (e) => {
+        const btn = e.target.closest('button.tab');
+        if (!btn) return;
+        state.category = btn.dataset.cat;
+        renderTabs(Array.from(tabs.querySelectorAll('button.tab')).map(b=>b.dataset.cat).filter(c=>c!=='ALL'));
+        applyFilters();
+      });
+
+      q.addEventListener('input', debounce(() => { state.query = q.value.trim(); applyFilters(); }, 200));
+    </script>
+  </body>
+  </html>
+
+

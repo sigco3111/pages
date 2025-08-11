@@ -1,0 +1,36 @@
+---
+/**
+ * 목적: 상세 페이지. 정적 출력에서 모든 slug를 사전 계산하여 프리렌더한다.
+ */
+export async function getStaticPaths() {
+  const modules = import.meta.glob('../../../md_page/*.md');
+  const paths = [];
+  for (const [key, loader] of Object.entries(modules)) {
+    const name = key.split('/').pop()?.replace(/\.md$/, '');
+    if (!name) continue;
+    const mod = await loader();
+    paths.push({ params: { slug: name }, props: { mod } });
+  }
+  return paths;
+}
+
+const { mod } = Astro.props as { mod: any };
+const { Content, frontmatter } = mod;
+---
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{frontmatter?.title || '상세'}</title>
+  </head>
+  <body class="container" style="padding:24px;max-width:900px">
+    <a href="/" aria-label="홈으로">← 홈</a>
+    <h1 style="margin:8px 0 4px">{frontmatter?.title}</h1>
+    {frontmatter?.date && <div style="color:#6b7280">{frontmatter.date} {frontmatter?.category && `· ${frontmatter.category}`}</div>}
+    <article style="margin-top:16px">
+      <Content />
+    </article>
+  </body>
+  </html>
+
+

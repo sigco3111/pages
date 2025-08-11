@@ -1,0 +1,197 @@
+# Kitten TTS - CPU만으로 동작하는 25MB 오픈소스 TTS 모델
+
+발견일: 2025/08/12
+원문 URL: https://news.hada.io/topic?id=22374
+분류: 오픈소스
+원문 Source: 🔗news.hada
+즐겨찾기: No
+
+[](https://social.news.hada.io/topic/22374)
+
+▲
+
+(github.com/KittenML)
+
+19P by [GN⁺](https://news.hada.io/user?id=neo) 5일전 | ★ favorite | [댓글 2개](https://news.hada.io/topic?id=22374)
+
+- Kitten TTS는 **경량화와 고음질을 동시에 추구하는 오픈소스 TTS(텍스트-투-스피치) 모델**
+- 1,500만 개 파라미터만 사용하여 **모델 크기가 25MB 미만**
+    - 타 대형 TTS와 달리 모바일, 임베디드 등 모든 환경에서 실행이 가능하다는 것이 큰 특징
+- GPU 없이도 **모든 기기에서 고품질의 음성 합성** 처리 가능함
+- 다양한 **프리미엄 목소리** 옵션 제공으로 실제 음성과 흡사한 **고음질 음성 합성**지원
+- 빠른 속도로 음성 추론이 가능하여 **실시간 합성**에 최적화
+- 개발자 프리뷰 모델이 공개된 상태이며, 향후 교육 완료 전체 모델 가중치, 모바일 SDK, 웹 버전 등 순차적 공개 예정
+
+▲
+
+[hybridego](https://news.hada.io/user?id=hybridego) [5일전](https://news.hada.io/comment?id=42246)  [-]
+
+한국어 모델도 있으면 좋을텐데요..
+
+[답변달기](chrome-extension://ldmmifpegigmeammaeckplhnjbbpccmm/popup/index.html)
+
+▲
+
+[GN⁺](https://news.hada.io/user?id=neo) [5일전](https://news.hada.io/comment?id=42224)  [-]
+
+### [Hacker News 의견](https://news.ycombinator.com/item?id=44807868)
+
+- Ubuntu 24에서 Razer Blade 16, Intel Core i9-14900HX로 간단하게 벤치마크를 진행함
+초기 지연시간은 짧은 텍스트 기준 약 315ms이고, 음성 생성 속도는 텍스트 길이에 따라 초당 3.35~5.5배 실시간 속도를 보여줌
+모델은 약 710ms에 로드됨
+4종의 서로 다른 목소리에서도 성능 차이가 거의 없고, 실시간의 최대 5배 정도 속도를 유지함
+    - 내 Intel Celeron N4020 CPU(1.10GHz)에서는 불러오는 데 6초 걸리고, 텍스트 길이와 무관하게 거의 실시간 속도임
+    - 벤치마크 실행에 감사함
+    지금 모델은 아직 최적화 전임
+    프로덕션용 SDK가 출시될 때 로딩 등도 최적화할 계획임
+- Reddit에 KittenTTS가 생성한 오디오 샘플이 올라와 있음
+[Reddit 오디오 샘플](https://www.reddit.com/r/LocalLLaMA/comments/1mhyzp7/kitten_tts_sota_supertiny_tts_model_less_than_25/)
+    - 다양한 목소리가 모두 들어간 짧은 영상도 있음
+    [YouTube 영상](https://www.youtube.com/watch?v=60Dy3zKBGQg)
+    - Reddit 영상이 정말 멋짐
+    25MB도 안 되는 크기에 CPU만 써서 이 정도 퀄리티가 나오는 게 놀라움
+    사람들이 ‘그저 그런 모델’이라고 평하는 게 이해 안 감
+    - 소리가 굉장히 또렷하고 명확함
+    영어 원어민이 아닌 내가 듣기에도 알아듣기 쉬움
+    - 좀 느리게 들리고, 애니메이션에서 나온 듯한 느낌의 소리임
+    - 혹시 Futurama 캐릭터 목소리로 크로스 트레이닝한 것 아님?
+- 이런 모델이 미래가 되었으면 좋겠음
+오프라인, 소형 ML 모델이 저렴하고 어디서나 구할 수 있는 하드웨어에서 추론을 수행하는 시대
+쉽게 다른 기기나 앱에 통합할 수 있고, 심지어 다른 모델에서 구동시킬 수도 있음
+    - Apple이 SLM(작은 언어 모델)으로 그리는 청사진이 바로 이것임
+    달력 이벤트 관리만 담당하는 모델이 있다고 하면, 인류 전체의 지식을 담아야 할 필요 없음
+    필요한 것만 달력 관리에 집중시키면 됨
+    - 단일 목적의 전용 하드웨어로 모델을 구동하면, 에너지 효율이 매우 높아짐
+    심지어 저항만으로 신경망을 돌릴 수도 있음(트랜지스터 없이)
+    물론 이런 하드웨어는 일반 목적이 아니고, 모델 업그레이드가 어렵지만
+    많은 사례에서는 이 정도면 충분함
+    - 한 번 구매하면 뭐든지 돌릴 수 있는 모델과
+    구독 모델로 묶고, 가장 부유한 메가 기업만이 구매할 수 있는 하드웨어가 필요한 모델
+    과연 어느 쪽이 더 성공할지 궁금함
+    - 실은 이게 바로 우리가 이루려는 목표임
+    - 우리 비전도 바로 이것임
+- 25MB인 크기도 놀랍지만, 진짜 혁신 포인트는 KittenTTS가 Apache-2.0 라이선스로 공개되었다는 점임
+이 조합 덕분에, 완전히 오프라인으로 구동되는 음성 엔진을 Pi Zero급 하드웨어나 배터리 기반 장난감에 바로 내장할 수 있음
+GPU, 클라우드 호출, 제한적인 라이선스 걱정 필요 없음
+한 번에 하드웨어나 라이선스 문제를 ‘패키징 문제’로 바꿔버림
+퀄리티 개선은 나중 문제이고, 이 등급 배포를 가능하게 한 것이 진짜 게임체인저라고 봄
+    - 우리도 앞으로 고퀄리티 초소형 AI 모델을 만드는 데 정말 신남
+    로컬 음성 인터페이스는 필연적이라 생각하고, 미래에 이 분야의 핵심이 되고 싶음
+    이번 모델은 프리뷰이고, 다음 주쯤 완성도 훨씬 높은 버전을 추가로 공개할 것임
+    추가로 약 80M 모델도 함께 공개할 예정임
+    - KittenTTS가 Apache-2.0이라는 점 이야기했는데
+    GitHub의 [소스 코드](https://github.com/KittenML/KittenTTS/blob/main/kittentts/onnx_model.py#L3) 살펴보면 phonemizer를 쓰고 있음
+    phonemizer는 [GPL-3.0 라이선스](https://github.com/bootphon/phonemizer)임
+    그래서 지금은 사실상 GPL임
+    (참고: 이 댓글이 LLM이 만든 거 같다는 내용도 덧붙임)
+    - Festival의 festvox-kallpc16k 모델이 약 6MB, festvox-kallpc8k는 약 3.5MB임
+    eSpeak NG의 다국어 데이터가 12MB쯤 됨
+    지금 모델이 더 자연스러운 음성을 만들 것 같긴 하지만
+    이전이나 저사양 컴퓨터도 예전부터 꽤 괜찮은 TTS를 구현할 수 있었음
+    - KittenTTS가 Apache-2.0이면
+    학습 데이터는 어떻게 되는지 궁금함
+    모델이 학습 입력값을 그대로 복원할 수 있을 정도로 똑같이 나오더라도
+    법적으로 완전히 파생 저작물이 아니라 확신할 수 있음?
+    - espeak-ng에 의존하고 있어서 GPLv3임
+- 웹버전이 있음
+[데모 바로가기](https://clowerweb.github.io/kitten-tts-web-demo/)
+소리는 적당한데, 크기로 봤을 때 상당히 인상적임
+    - SF 영화에서 로봇 목소리를 "진짜 로봇답게" 만드려고 오히려 소리를 오묘하게 왜곡하는 게 우습지 않음?
+    명확히 사람 목소리가 아닌 로봇 목소리가 실제로는 여러 환경에서 더 매력적이고 바람직할 때도 많음
+    예를 들어 스마트 토스터가 BBC 뉴스 앵커처럼 말할 필요 없음
+    발음만 잘 들리면 됨
+    - 데모 텍스트를 따라 읽게 했는데, 샘플만큼 좋게 들리진 않음
+    혹시 해보고 싶은 사람을 위해 샘플 텍스트 남김
+        
+        > Kitten TTS is an open-source series of tiny and expressive text-to-speech models for on-device applications. Our smallest model is less than 25 megabytes.
+        > 
+    - 6문장으로 데모를 돌려보니 에러가 발생했음
+    3문장으로 줄이니 잘 작동함
+    텍스트 길이 제한이 모델 때문인지, 아니면 데모의 한계인지 궁금함
+    - 내 환경에서는 아예 작동하지 않음
+    백엔드 모듈에서 404 오류가 남
+    [404 에러 예시 링크](https://clowerweb.github.io/node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.jsep.mjs)
+    - 이 링크로 찾으려 했던 중이었음
+    Reddit 데모는 그럭저럭 괜찮고, 몇 년 전 수준이라는 생각임
+    그런데 직접 시연해보니 모든 샘플이 거의 알아듣기 힘든 수준임
+- 시스템 요구 사항이 "사실상 어디서든 동작"이라고 되어 있어서 웃겼음
+어떤 머신에선 파이썬 버전이 너무 낮거나
+또 다른 머신은 파이썬 버전이 너무 높아서, 패키지 의존성 문제로 설치가 안 됨
+    - 이 문제 해결하려고 몇 개의 PR을 올렸음
+    [PR 21](https://github.com/KittenML/KittenTTS/pull/21), [PR 24](https://github.com/KittenML/KittenTTS/pull/24), [PR 25](https://github.com/KittenML/KittenTTS/pull/25)
+    `uv`가 설치되어 있다면, 내가 머지한 레퍼런스 브랜치에서
+        
+        ```
+        uvx --from git+https://github.com/akx/KittenTTS.git@pr-21-22-24-25 kittentts --output output.wav --text "This high quality TTS model works without a GPU"
+        ```
+        
+        이렇게 실행하면 됨
+        
+    - uvx로 설치하면 파이썬 환경 문제를 대부분 해결할 수 있음
+    [uv 설치 가이드](https://docs.astral.sh/uv/getting-started/installation/)
+    - 파이썬을 선택하면 하나의 문제가 해결되지만 동시에 수십 개의 새로운 문제가 생기게 됨
+    - Fedora에선 g++ 적절한 버전이 없어서 작동이 안 됨
+    - 파이썬이 원인임
+- 직접 사용해보니, 모델 크기와 속도는 제법 괜찮음
+하지만 설치에 매우 많은 라이브러리와 부가 요소가 필요해서
+결국 25MB에서 많이 멀어지게 됨
+그래도 멋진 프로젝트임
+    - 의존성 문제에 대한 좋은 지적임
+    설치와 사용이 쉽도록, 그리고 사람들이 원하는 GPU 지원과 긴 텍스트 처리를 추가하려고
+    해당 모델을 위한 자체 호스팅 서버를 만들었음
+    [Kitten-TTS-Server](https://github.com/devnen/Kitten-TTS-Server)
+    표준 파이썬 venv 환경만으로 바로 실행되어 충돌 걱정 없음
+    git clone, pip install, python server.py만으로 끝남
+    - ONNX 언급이 있으니 ONNX 모델이 이미 있거나 곧 추가될 거라 추측함
+    ONNX runtime은 하나의 라이브러리라서 C# 기준 115MB정도로 압축됨
+    매우 작지는 않지만, 실제로 돌릴 때 필요한 코드는 몇 줄이니 의존성도 적음
+    - 라이브러리 여럿을 한 번에 들이면 빠른 개발과 반복에 도움됨
+    나중에 기능이 자리잡으면 불필요한 라이브러리는 정리함
+- 모델 용량(MB 단위)보다 CPU 구동 및 퀄리티가 더 중요하고, 유일하게 걱정되는 건 지연시간임
+음성에서 텍스트로 바꿔주는 모델이 오프라인에서 별도 학습 없이 가능한지 궁금함
+AI와 대화를 자연스러운 속도로, 마치 사람끼리 대화하듯 하는 시대가 오면 정말 인상적일 것임
+    - Nvidia의 [parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) 모델이 영어 기준으로 최신임
+    Whisper보다 10배 빠르고, 내 중급 AMD CPU로도 실시간보다 훨씬 빠르게 동작함
+    - Whisper로 오프라인 음성인식이 가능함
+    일부 앱에서는 완전 오프라인 받아쓰기나 전사를 지원함
+    - 예시로 "The brown fox jumps over the lazy dog.." 텍스트에서
+    평균 생성시간은 1.28초, 초당 글자수 30.35 정도 나옴
+    AMD Ryzen 7 5800H 기준임
+    - 오프라인 음성인식 모델로는 OpenAI의 whisper가 대표적임
+    [Whisper 공식 저장소](https://github.com/openai/whisper)
+    - TTS 모델의 지연 시간에 영향을 주는 요인에 대해 아는 사람 있음?
+- 꽤 인상적임
+특정 분야, 예를 들면 임베디드 영역에서 충분히 쓸 곳이 있음
+다만 대형 모델을 대체할 정도로 퀄리티가 완벽하진 않은 것 같음
+오프라인으로 가장 품질이 높은 open TTS 모델로는 fish-speech와 f5-tts가 있다고 봄
+F5-TTS를 구형 NVidia 1660(6GB VRAM)에서 돌렸을 때 괜찮게 작동했음
+최신 하드웨어로는 가격 부담 없이 더 높은 품질과 멀티언어, zero-shot까지 활용 가능함
+안드로이드는 SherpaTTS가 호환성 좋음
+    - [fish-speech](https://github.com/fishaudio/fish-speech)
+    - [F5-TTS](https://github.com/SWivid/F5-TTS)
+    - [SherpaTTS/ttsengine](https://github.com/woheller69/ttsengine)
+    - 이 모델은 프리뷰 버전이며, 앞으로 품질을 훨씬 더 개선하려 함
+    - Fish Speech는 가중치가 상업적 이용 불가능임
+    VRAM 요구사항이 궁금한데, KittenTTS는 1,500만 파라미터라서 10만원 미만의 저전력 컴퓨터에서도 동작할 수 있음
+    네가 쓴 6GB GPU는 이미 구형임
+- 퀄리티가 기대만큼 인상적이진 않음
+자연스러운 음성이 목표임
+piper나 kokoro도 만족스럽지 않고, XTTS는 설치가 조금 복잡했음
+음성인식(STT)에서는 whisper가 정말 짱
+좋은 TTS가 그리움
+GPU 사용량이 높아도 괜찮으니 좋은 품질을 원함
+참고로 지금 이 모델은 kokoro보다 더 별로임
+    - 내 생각엔 현재 오픈웨이트 SOTA 품질은 [chatterbox](https://huggingface.co/ResembleAI/chatterbox)가 최고임
+    - 내가 본 최고의 오픈소스 TTS는 [Dia](https://github.com/nari-labs/dia)임
+    몇 가지 한계는 있지만, 노트북에서도 잘 돌아감
+    - [Pinokio](https://pinokio.co/)도 한 번 사용해볼 만함
+    - Chatterbox도 시도해 볼 가치 있음
+    - 만약 GPU 자원이 넉넉하면, 여기서 퀄리티를 너무 따지지 않아도 됨
+    중요한 건 이 모델이 GPU 없이도 돌아간다는 점임
+    예전에 Tacotron2 이전에는 GlowTTS, MelGAN 등의 소형 TTS, vocoder를 Digital Ocean 클라우드에서 저렴하게 돌렸었음
+    이후 트렌드는 점점 대형화로 갔지만
+    앞으로는 소형 모델이 각 기기에 직접 내장되는 시대가 올 거라고 봄
+    라즈베리파이, 장난감, 네트워크 필요 없는 각종 소형 디바이스에 쓰임
+    엣지 AI는 로봇, 장난감, 소비자 기기, 게임 분야에서 엄청난 확장을 가져올 것임
+
+[답변달기](chrome-extension://ldmmifpegigmeammaeckplhnjbbpccmm/popup/index.html)

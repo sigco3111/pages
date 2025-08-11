@@ -1,0 +1,24 @@
+---
+/**
+ * 목적: 리스트용 카드 컴포넌트. 썸네일/카테고리/날짜/제목을 표시한다.
+ */
+export interface Props {
+  slug: string;
+  title: string;
+  category?: string;
+  date?: string;
+  thumbnail?: string;
+}
+const { slug, title, category, date, thumbnail } = Astro.props as Props;
+---
+<a class="card" href={`/post/${slug}`}
+  aria-label={`${title} 글 상세 보기`}>
+  {thumbnail ? <img class="thumb" src={thumbnail} alt="" loading="lazy" /> : <div class="thumb" />}
+  <div class="meta">
+    {category && <span class="tab" aria-label="카테고리">{category}</span>}
+    {date && <span aria-label="발견일">{date}</span>}
+  </div>
+  <div class="title">{title}</div>
+</a>
+
+
