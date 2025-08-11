@@ -1,4 +1,4 @@
-## Markdown → GitHub Pages 뉴스보드
+## 노션 Markdown → GitHub Pages
 
 노션에서 Markdown을 내려받아 `md_page/` 폴더에 넣고 정적 사이트를 빌드해 GitHub Pages에 배포하는 프로젝트입니다. 카드형 UI, 전역 검색, 카테고리/태그 필터를 제공합니다.
 
@@ -7,6 +7,14 @@
 - 전역 검색(Fuse.js) + 카테고리/기간/즐겨찾기 필터
 - 사용자가 주기적으로 노션에서 Markdown을 내려받아 `md_page/`에 추가/커밋하면, GitHub Actions가 인덱스 생성/빌드/배포를 자동 수행
 - 접근성/SEO 최적화(시맨틱 마크업, 메타 태그)
+
+### 기술 스택
+- Astro 4 + TypeScript(정적 사이트 생성, 동적 라우트 프리렌더)
+- Fuse.js(클라이언트 전역 검색)
+- Sharp, png-to-ico(파비콘 PNG/ICO 자동 생성)
+- GitHub Actions(빌드·배포 자동화, 실패 시 이슈 생성)
+- Node.js 20(개발/CI 런타임)
+- CSS(경량 글로벌 스타일)
 
 ### 디렉터리 구조(초기)
 ```
