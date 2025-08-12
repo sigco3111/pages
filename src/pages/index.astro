@@ -6,7 +6,7 @@ import '../styles/global.css';
 import Card from '../../src/components/Card.astro';
 const SITE_TITLE = 'AI 뉴스 보드';
 // 번들 안전한 스크립트 URL. Vite `?url`로 산출물 URL을 얻는다.
-import homeScriptUrl from '../scripts/home.ts?url';
+// 번들 시 Vite가 처리할 수 있도록 절대 경로로 모듈을 지정한다.
 ---
 <html lang="ko">
   <head>

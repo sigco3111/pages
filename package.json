@@ -8,6 +8,7 @@
     "prebuild": "node scripts/build-index.mjs",
     "build": "astro build",
     "preview": "astro preview",
+    "test:e2e": "playwright test",
     "sync": "node scripts/notion-sync.mjs",
     "index": "node scripts/build-index.mjs",
     "icons": "node scripts/generate-icons.mjs"
@@ -17,6 +18,9 @@
     "fuse.js": "^7.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
     "png-to-ico": "^2.1.8",
     "sharp": "^0.33.4"
   }
