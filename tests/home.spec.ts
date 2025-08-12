@@ -7,7 +7,7 @@ test('홈 페이지 로딩 및 카드/링크 확인', async ({ page }) => {
   // 네트워크 대기자를 먼저 준비하고 페이지 이동(레이스 컨디션 방지)
   const waitIndex = page.waitForResponse((r) => /\/pages\/index\.json$/.test(r.url()) && r.ok());
   await page.goto('./');
-  await expect(page).toHaveTitle(/AI 뉴스 보드/);
+  await expect(page).toHaveTitle(/노션 보드/);
   await waitIndex;
 
   // 카드 하나 이상 표시
