@@ -5,8 +5,10 @@
 import '../styles/global.css';
 import Card from '../../src/components/Card.astro';
 const SITE_TITLE = 'AI 뉴스 보드';
-// 번들 안전한 스크립트 URL. Vite `?url`로 산출물 URL을 얻는다.
-// 번들 시 Vite가 처리할 수 있도록 절대 경로로 모듈을 지정한다.
+// Vite 번들에 포함시키기 위해 클라이언트 스크립트를 URL로 import
+// 외부 모듈 스크립트를 직접 참조하면 Vite가 번들/경로를 자동 처리한다.
+// 번들 시 경로 문제가 없도록 Vite `?url`을 사용해 스크립트 URL을 주입한다.
+// 외부 모듈 스크립트 경로 이슈를 피하기 위해 이 페이지에서 직접 초기화 스크립트를 실행한다.
 ---
 <html lang="ko">
   <head>
@@ -16,6 +18,7 @@ const SITE_TITLE = 'AI 뉴스 보드';
     <link rel="icon" href={import.meta.env.BASE_URL + 'favicon.svg'} type="image/svg+xml" />
     <link rel="icon" href={import.meta.env.BASE_URL + 'favicon-32x32.png'} sizes="32x32" />
     <link rel="apple-touch-icon" href={import.meta.env.BASE_URL + 'apple-touch-icon.png'} sizes="180x180" />
+    <meta name="app-base" content={import.meta.env.BASE_URL} />
   </head>
   <body>
     <header>
@@ -31,7 +34,7 @@ const SITE_TITLE = 'AI 뉴스 보드';
       <div id="grid" class="grid" aria-live="polite"></div>
     </main>
 
-    <script type="module" src={homeScriptUrl}></script>
+    <script type="module" src={import.meta.env.BASE_URL + 'home.js'}></script>
   </body>
   </html>
 

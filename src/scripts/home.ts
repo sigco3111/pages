@@ -3,6 +3,15 @@
  */
 import Fuse from 'fuse.js';
 
+// BASE 경로: 메타 태그 → import.meta.env.BASE_URL → '/'
+function getBaseUrl(): string {
+  const meta = document.querySelector('meta[name="app-base"]') as HTMLMetaElement | null;
+  let base = meta?.getAttribute('content') || (import.meta as any)?.env?.BASE_URL || '/';
+  if (!base.endsWith('/')) base += '/';
+  return base;
+}
+const BASE = getBaseUrl();
+
 const state: {
   items: any[];
   filtered: any[];
@@ -19,7 +28,7 @@ function render() {
   grid.innerHTML = state.filtered
     .map(
       (item) => `
-          <a class="card" href="${import.meta.env.BASE_URL}post/${item.slug}" aria-label="${item.title} 상세 보기">
+          <a class="card" href="${BASE}post/${item.slug}" aria-label="${item.title} 상세 보기">
             ${item.thumbnail ? `<img class="thumb" src="${item.thumbnail}" alt="" loading="lazy" />` : `<div class="thumb"></div>`}
             <div class="meta">${item.category ? `<span class=tab>${item.category}</span>` : ''}${
         item.date ? `<span>${item.date}</span>` : ''
@@ -28,6 +37,7 @@ function render() {
           </a>`
     )
     .join('');
+  console.log('[home] render', { filtered: state.filtered.length, children: grid.children.length });
 }
 
 function renderTabs(categories: string[]) {
@@ -51,6 +61,7 @@ function applyFilters() {
   }
   state.filtered = list;
   render();
+  console.log('[home] applyFilters', { category: state.category, query: state.query, filtered: state.filtered.length });
 }
 
 function debounce<T extends (...args: any[]) => void>(fn: T, ms: number) {
@@ -62,19 +73,21 @@ function debounce<T extends (...args: any[]) => void>(fn: T, ms: number) {
 }
 
 // 초기화
-fetch(`${import.meta.env.BASE_URL}index.json`)
+fetch(`${BASE}index.json`)
   .then((r) => r.json())
   .then((data) => {
     state.items = data.items || [];
     const cats = Array.from(new Set(state.items.map((i: any) => i.category).filter(Boolean))).sort();
     renderTabs(cats);
     applyFilters();
+    console.log('[home] index.json loaded', { items: state.items.length, base: BASE });
   })
-  .catch(() => {
+  .catch((err) => {
     // index.json을 찾지 못하면 빈 상태로 유지
     state.items = [];
     renderTabs([]);
     applyFilters();
+    console.error('[home] index.json load failed', err?.message || err);
   });
 
 tabs?.addEventListener('click', (e) => {
