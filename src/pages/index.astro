@@ -31,7 +31,7 @@ const SITE_TITLE = 'AI 뉴스 보드';
 
     <script type="module">
       // 목적: index.json을 로드하고 Fuse.js로 클라이언트 검색/필터를 제공한다.
-      import Fuse from '/node_modules/fuse.js/dist/fuse.js';
+      import Fuse from 'fuse.js';
 
       const state = { items: [], filtered: [], category: 'ALL', query: '' };
       const grid = document.getElementById('grid');
@@ -40,7 +40,7 @@ const SITE_TITLE = 'AI 뉴스 보드';
 
       function render() {
         grid.innerHTML = state.filtered.map(item => `
-          <a class="card" href="/post/${item.slug}" aria-label="${item.title} 상세 보기">
+          <a class="card" href="${import.meta.env.BASE_URL}post/${item.slug}" aria-label="${item.title} 상세 보기">
             ${item.thumbnail ? `<img class="thumb" src="${item.thumbnail}" alt="" loading="lazy" />` : `<div class="thumb"></div>`}
             <div class="meta">${item.category ? `<span class=tab>${item.category}</span>` : ''}${item.date ? `<span>${item.date}</span>` : ''}</div>
             <div class="title">${item.title}</div>
