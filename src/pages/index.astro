@@ -68,7 +68,7 @@ const SITE_TITLE = 'AI 뉴스 보드';
       function debounce(fn, ms) { let t; return (...args) => { clearTimeout(t); t = setTimeout(()=>fn(...args), ms); }; }
 
       // 초기화
-      fetch('/index.json').then(r => r.json()).then(data => {
+      fetch(`${import.meta.env.BASE_URL}index.json`).then(r => r.json()).then(data => {
         state.items = data.items || [];
         const cats = Array.from(new Set(state.items.map(i => i.category).filter(Boolean))).sort();
         renderTabs(cats);

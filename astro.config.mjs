@@ -4,7 +4,10 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  output: 'static'
+  output: 'static',
+  // 프로젝트 사이트(https://{user}.github.io/{repo}/) 배포를 위해 base 경로를 지정한다.
+  // 레포명이 pages 인 경우: '/pages/'
+  base: '/pages/'
 });
 
 

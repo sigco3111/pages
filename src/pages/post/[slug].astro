@@ -27,7 +27,7 @@ const { Content, frontmatter } = mod;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
   </head>
   <body class="container" style="padding:24px;max-width:900px">
-    <a href="/" aria-label="홈으로">← 홈</a>
+    <a href={`${import.meta.env.BASE_URL}`} aria-label="홈으로">← 홈</a>
     <h1 style="margin:8px 0 4px">{frontmatter?.title}</h1>
     {frontmatter?.date && <div style="color:#6b7280">{frontmatter.date} {frontmatter?.category && `· ${frontmatter.category}`}</div>}
     <article style="margin-top:16px">
