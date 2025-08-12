@@ -5,6 +5,8 @@
 import '../styles/global.css';
 import Card from '../../src/components/Card.astro';
 const SITE_TITLE = 'AI 뉴스 보드';
+// 번들 안전한 스크립트 URL. Vite `?url`로 산출물 URL을 얻는다.
+import homeScriptUrl from '../scripts/home.ts?url';
 ---
 <html lang="ko">
   <head>
@@ -29,9 +31,7 @@ const SITE_TITLE = 'AI 뉴스 보드';
       <div id="grid" class="grid" aria-live="polite"></div>
     </main>
 
-    <script type="module">
-      import '../../scripts/home.ts';
-    </script>
+    <script type="module" src={homeScriptUrl}></script>
   </body>
   </html>
 
