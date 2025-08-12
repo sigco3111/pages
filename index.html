@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI 뉴스 보드</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32x32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"><style>:root{color-scheme:light dark}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}header{position:sticky;top:0;background:var(--bg, #fff);padding:12px 16px;border-bottom:1px solid #e5e7eb}.container{max-width:1200px;margin:0 auto;padding:16px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.searchbar{width:100%;max-width:560px;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tab{padding:6px 10px;border:1px solid #d1d5db;border-radius:999px;cursor:pointer;font-size:14px}.tab.active{background:#111827;color:#fff;border-color:#111827}.card{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;background:#fff}.thumb{aspect-ratio:16/9;background:#f3f4f6;object-fit:cover;width:100%;height:auto;display:block}.meta{padding:12px;font-size:13px;color:#6b7280;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.title{padding:0 12px 12px;font-weight:600;line-height:1.35}@media (prefers-color-scheme: dark){header{background:#0b0b0b;border-bottom-color:#27272a}.card{background:#0f1115;border-color:#27272a}.searchbar,.tab{border-color:#27272a}}
 </style></head> <body> <header> <div class="container" style="display:flex;gap:12px;align-items:center;justify-content:space-between;"> <strong>AI 뉴스 보드</strong> <input id="q" class="searchbar" placeholder="검색: 제목, 분류, 원문…" aria-label="전역 검색"> </div> <div class="container"> <div id="tabs" class="tabs" role="tablist" aria-label="카테고리 필터"></div> </div> </header> <main class="container"> <div id="grid" class="grid" aria-live="polite"></div> </main> <script type="module">
       // 목적: index.json을 로드하고 Fuse.js로 클라이언트 검색/필터를 제공한다.
-      import Fuse from '/node_modules/fuse.js/dist/fuse.js';
+      import Fuse from 'fuse.js';
 
       const state = { items: [], filtered: [], category: 'ALL', query: '' };
       const grid = document.getElementById('grid');
@@ -10,7 +10,7 @@
 
       function render() {
         grid.innerHTML = state.filtered.map(item => `
-          <a class="card" href="/post/${item.slug}" aria-label="${item.title} 상세 보기">
+          <a class="card" href="${import.meta.env.BASE_URL}post/${item.slug}" aria-label="${item.title} 상세 보기">
             ${item.thumbnail ? `<img class="thumb" src="${item.thumbnail}" alt="" loading="lazy" />` : `<div class="thumb"></div>`}
             <div class="meta">${item.category ? `<span class=tab>${item.category}</span>` : ''}${item.date ? `<span>${item.date}</span>` : ''}</div>
             <div class="title">${item.title}</div>
