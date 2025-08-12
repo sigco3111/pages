@@ -31,22 +31,27 @@ pages/
 - Node.js ≥ 18, pnpm 또는 npm
 
 ### 빠른 시작(로컬 미리보기)
-1) 의존성 설치 및 개발 서버 실행
+1) 의존성 설치
 ```bash
-pnpm install
-pnpm dev
+npm install
 ```
-2) 브라우저에서 `http://localhost:4321` 접속(Astro 기준). 다른 정적 프레임워크를 선택했다면 해당 포트로 변경.
+2) Markdown 추가/갱신 후, 인덱스 생성 → 빌드 → 개발 서버 실행
+```bash
+npm run index   # md_page/*.md → public/index.json 재생성
+npm run build   # 새 슬러그 프리렌더(정적 출력)
+npm run dev     # 로컬 미리보기
+```
+3) 브라우저에서 `http://localhost:4321/pages/` 접속
 
-### 빌드
+### 빌드만 수행
 ```bash
-pnpm run index && pnpm build
+npm run index && npm run build
 ```
-빌드 시 `public/index.json` 검색 인덱스가 생성됩니다.
+빌드 시 `public/index.json`이 생성/갱신되고, 상세 페이지가 프리렌더됩니다.
 
 ### 배포(GitHub Pages)
 1) 리포지토리 Settings → Pages 활성화(브랜치 또는 GitHub Actions)
-2) 제공된 워크플로를 사용해 `main` 푸시 또는 스케줄 시 자동 배포됩니다.
+2) `main`에 커밋/푸시하면 Actions가 자동으로 `index → build → deploy`를 실행합니다.
 
 ### GitHub Actions 자동 배포(수동 동기화 가정)
 사용자는 노션에서 Markdown을 내려받아 `md_page/`에 추가하고 커밋/푸시합니다. 워크플로는 인덱스 생성 → 빌드 → Pages 배포를 수행합니다.
@@ -67,7 +72,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
+      - run: npm ci --no-fund --no-audit
       - name: Build index
         run: npm run index
       - run: npm run build
