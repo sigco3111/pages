@@ -2,6 +2,10 @@
 
 노션에서 Markdown을 내려받아 `md_page/` 폴더에 넣고 정적 사이트를 빌드해 GitHub Pages에 배포하는 프로젝트입니다. 카드형 UI, 전역 검색, 카테고리/태그 필터를 제공합니다.
 
+실행주소1 : https://sigco3111.github.io/pages/
+
+실행주소2 : https://dev-canvas-pi.vercel.app/
+
 ### 특징
 - 카드 그리드 UI(썸네일/카테고리/발견일 뱃지)
 - 전역 검색(Fuse.js) + 카테고리/기간/즐겨찾기 필터
