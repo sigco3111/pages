@@ -29,7 +29,9 @@ const SITE_TITLE = 'AI 뉴스 보드';
       <div id="grid" class="grid" aria-live="polite"></div>
     </main>
 
-    <script type="module" src={new URL('../scripts/home.ts', import.meta.url).pathname}></script>
+    <script type="module">
+      import '../../scripts/home.ts';
+    </script>
   </body>
   </html>
 

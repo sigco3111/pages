@@ -11,7 +11,7 @@ export interface Props {
 }
 const { slug, title, category, date, thumbnail } = Astro.props as Props;
 ---
-<a class="card" href={`/post/${slug}`}
+<a class="card" href={`${import.meta.env.BASE_URL}post/${slug}`}
   aria-label={`${title} 글 상세 보기`}>
   {thumbnail ? <img class="thumb" src={thumbnail} alt="" loading="lazy" /> : <div class="thumb" />}
   <div class="meta">
