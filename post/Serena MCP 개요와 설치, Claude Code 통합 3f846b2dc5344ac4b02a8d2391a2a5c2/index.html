@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="ko" data-astro-cid-ztig7rse> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>상세</title><link rel="icon" href="/pages/favicon.svg" type="image/svg+xml"><link rel="icon" href="/pages/favicon-32x32.png" sizes="32x32"><link rel="apple-touch-icon" href="/pages/apple-touch-icon.png" sizes="180x180"><style>:root{color-scheme:light dark}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.wrap[data-astro-cid-ztig7rse]{max-width:860px;margin:0 auto;padding:20px}.topbar[data-astro-cid-ztig7rse]{position:sticky;top:0;backdrop-filter:blur(6px);background:color-mix(in oklab,canvas,transparent 35%);border-bottom:1px solid color-mix(in oklab,canvastext,transparent 90%);z-index:10}.topbar[data-astro-cid-ztig7rse] .inner[data-astro-cid-ztig7rse]{display:flex;align-items:center;gap:8px;padding:10px 20px;max-width:860px;margin:0 auto}.btn[data-astro-cid-ztig7rse]{appearance:none;border:1px solid color-mix(in oklab,canvastext,transparent 85%);background:transparent;color:inherit;border-radius:10px;padding:8px 12px;cursor:pointer;font-size:14px}.btn[data-astro-cid-ztig7rse].primary{background:#111827;color:#fff;border-color:#111827}@media (prefers-color-scheme: dark){.btn[data-astro-cid-ztig7rse].primary{background:#e5e7eb;color:#111827;border-color:#e5e7eb}}.hero[data-astro-cid-ztig7rse]{margin:14px 0 8px;display:none}.hero[data-astro-cid-ztig7rse] img[data-astro-cid-ztig7rse]{width:100%;height:auto;border-radius:12px;display:block;background:#f3f4f6}article[data-astro-cid-ztig7rse]{line-height:1.72;font-size:16px}article[data-astro-cid-ztig7rse] :is(h1,h2,h3)[data-astro-cid-ztig7rse]{line-height:1.25;margin:24px 0 10px}article[data-astro-cid-ztig7rse] h1[data-astro-cid-ztig7rse]{font-size:28px}article[data-astro-cid-ztig7rse] h2[data-astro-cid-ztig7rse]{font-size:22px}article[data-astro-cid-ztig7rse] h3[data-astro-cid-ztig7rse]{font-size:18px}article[data-astro-cid-ztig7rse] p[data-astro-cid-ztig7rse]{margin:10px 0}article[data-astro-cid-ztig7rse] img[data-astro-cid-ztig7rse]{max-width:100%;height:auto;border-radius:8px;background:#f3f4f6}article[data-astro-cid-ztig7rse] pre[data-astro-cid-ztig7rse]{overflow:auto;padding:14px;border:1px solid color-mix(in oklab,canvastext,transparent 90%);border-radius:10px;background:color-mix(in oklab,canvastext,transparent 96%)}article[data-astro-cid-ztig7rse] code[data-astro-cid-ztig7rse]:not(pre code){background:color-mix(in oklab,canvastext,transparent 94%);padding:2px 6px;border-radius:6px}article[data-astro-cid-ztig7rse] blockquote[data-astro-cid-ztig7rse]{border-left:3px solid #9CA3AF;margin:8px 0;padding:4px 12px;color:#6b7280}.actions[data-astro-cid-ztig7rse]{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+</style></head> <body class="container" style="padding:24px;max-width:900px" data-astro-cid-ztig7rse> <div class="topbar" data-astro-cid-ztig7rse> <div class="inner" data-astro-cid-ztig7rse> <a class="btn" href="/pages/" aria-label="홈으로" data-astro-cid-ztig7rse>← 홈</a> <a class="btn" id="source" href="#" target="_blank" rel="noopener" style="display:none" data-astro-cid-ztig7rse>원문 보기</a> </div> </div> <div class="wrap" data-astro-cid-ztig7rse> <h1 style="margin:10px 0 6px" data-astro-cid-ztig7rse></h1> <div class="hero" id="hero" data-astro-cid-ztig7rse><img alt="" id="heroImg" loading="eager" data-astro-cid-ztig7rse></div> <div class="actions" data-astro-cid-ztig7rse> <a class="btn primary" id="ctaSource" href="#" target="_blank" rel="noopener" style="display:none" data-astro-cid-ztig7rse>원문 바로가기</a> </div> <article data-astro-cid-ztig7rse> <h1 id="serena-mcp-개요와-설치-claude-code-통합">Serena MCP 개요와 설치, Claude Code 통합</h1>
+<p>발견일: 2025/08/01
+원문 URL: <a href="https://hansdev.kr/tech/serena-mcp/">https://hansdev.kr/tech/serena-mcp/</a>
+분류: 인사이트
+원문 Source: 🔗hansdev
+즐겨찾기: No</p>
+<p>LLM(Large Language Model)이 코딩 어시스턴트로 급부상하면서, 개발자들은 더 나은 도구를 갈망하고 있습니다. ChatGPT, Claude, Gemini 같은 AI들이 코드를 이해하고 생성할 수는 있지만, 실제 프로젝트의 복잡한 구조와 의존성을 완벽히 파악하기에는 한계가 있었죠.</p>
+<p>바로 이 지점에서 <strong>Serena MCP</strong>가 등장합니다. 본 포스팅에서는 Serena MCP가 무엇인지, 어떻게 설치하고 Claude Code와 통합하는지 상세히 알아보겠습니다. 특히 Mac 환경을 기준으로 설명드리며, 실제 사용 경험을 바탕으로 한 실용적인 팁들도 함께 공유하겠습니다.</p>
+<h2 id="serena-mcp란-무엇인가요">Serena MCP란 무엇인가요?</h2>
+<h3 id="개념과-정의">개념과 정의</h3>
+<p>Serena는 LLM(ChatGPT, Claude, Gemini)을 코드베이스에서 직접 동작하는 에이전트로 변환시켜주는 강력한 코딩 에이전트 툴킷입니다. 공식 GitHub의 설명에 따르면, Serena는 IDE 수준의 기능에 필적하는, 기호(symbol) 단위의 코드 엔티티를 추출하고 관계 구조를 활용하는 ‘시맨틱 코드 검색 및 편집 도구’를 제공합니다.</p>
+<p>이 설명이 다소 기술적으로 들리실 수 있는데요, 쉽게 풀어보면 이런 의미입니다:</p>
+<blockquote>
+<p>“Serena는 LLM이 여러분의 코드를 단순히 텍스트로 보는 것이 아니라, 실제 개발자처럼 함수, 클래스, 변수 간의 관계를 이해하고 작업할 수 있게 해주는 도구입니다.”</p>
+</blockquote>
+<h3 id="핵심-기능-상세-분석">핵심 기능 상세 분석</h3>
+<p>Serena가 제공하는 주요 기능들을 자세히 살펴보겠습니다:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>기능</th><th>상세 설명</th><th>실제 활용 예시</th></tr></thead><tbody><tr><td><strong>시맨틱 코드 검색</strong></td><td>LSP(Language Server Protocol)를 기반으로 함수·클래스·변수 등 코드 기호들을 이해하고 전체 프로젝트 맥락에서 정확히 찾는 기능</td><td>“UserService를 상속받는 모든 클래스 찾기”, “deprecated 메서드를 사용하는 코드 검색”</td></tr><tr><td><strong>기호 수준 편집</strong></td><td>코드를 문자열이 아닌 의미 단위로 인식해 안전하고 정확한 수정 수행</td><td>“모든 async 함수에 에러 핸들링 추가”, “인터페이스 구현체 일괄 업데이트”</td></tr><tr><td><strong>관계 구조 활용</strong></td><td>함수 호출 체인, 의존성 그래프, 참조 흐름 등을 분석하고 시각화</td><td>“이 함수를 삭제하면 영향받는 모든 코드 분석”, “순환 의존성 탐지”</td></tr><tr><td><strong>IDE 유사 기능</strong></td><td>VSCode/Cursor와 같은 IDE에서 제공하는 고급 기능을 LLM 환경에서 구현</td><td>“Replace in Files”, “Go to Definition”, “Find All References”</td></tr></tbody></table>
+<h3 id="serena를-사용하면-얻게-되는-실질적-이점">Serena를 사용하면 얻게 되는 실질적 이점</h3>
+<h3 id="1-토큰-효율성-극대화">1. <strong>토큰 효율성 극대화</strong></h3>
+<p>일반적인 LLM 사용 시 전체 파일이나 큰 코드 블록을 컨텍스트로 제공해야 하지만, Serena는 필요한 심볼만 정확히 추출합니다.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>기존 방식: 1,000줄 파일 전체 → 약 8,000 토큰</span></span>
+<span class="line"><span>Serena 방식: 관련 심볼 5개만 → 약 500 토큰</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="2-정확도-향상">2. <strong>정확도 향상</strong></h3>
+<p>심볼릭 이해를 통해 실수를 현저히 줄입니다:</p>
+<ul>
+<li>변수명 오타로 인한 에러 90% 감소</li>
+<li>잘못된 참조 수정 95% 방지</li>
+<li>타입 불일치 문제 조기 발견</li>
+</ul>
+<h3 id="3-대규모-프로젝트-대응력">3. <strong>대규모 프로젝트 대응력</strong></h3>
+<ul>
+<li>10만 줄 이상의 코드베이스에서도 빠른 검색</li>
+<li>복잡한 의존성 관계 즉시 파악</li>
+<li>리팩토링 영향 범위 정확한 예측</li>
+</ul>
+<h3 id="지원-언어-및-프레임워크">지원 언어 및 프레임워크</h3>
+<p><strong>공식 지원 언어:</strong></p>
+<ul>
+<li><strong>Tier 1 (완벽 지원)</strong>: Python, TypeScript/JavaScript, PHP, Go, Rust, C#, Java</li>
+<li><strong>Tier 2 (실험적)</strong>: Elixir, Clojure</li>
+<li><strong>Tier 3 (미검증)</strong>: Ruby, Kotlin, Dart</li>
+</ul>
+<p>각 언어별 LSP 서버 성숙도에 따라 기능 차이가 있을 수 있습니다.</p>
+<h2 id="왜-serena가-게임-체인저인가요">왜 Serena가 게임 체인저인가요?</h2>
+<h3 id="기존-ai-코딩-도구의-한계">기존 AI 코딩 도구의 한계</h3>
+<p>현재 대부분의 AI 코딩 어시스턴트들은 다음과 같은 한계를 가지고 있습니다:</p>
+<ol>
+<li><strong>컨텍스트 윈도우 제약</strong>: 대규모 프로젝트 전체를 이해하기 어려움</li>
+<li><strong>구조적 이해 부족</strong>: 코드를 단순 텍스트로만 인식</li>
+<li><strong>정확한 리팩토링 불가</strong>: 심볼 간 관계를 모르므로 안전한 변경 보장 못함</li>
+<li><strong>비효율적 토큰 사용</strong>: 불필요한 코드까지 모두 읽어야 함</li>
+</ol>
+<h3 id="serena의-혁신적-접근">Serena의 혁신적 접근</h3>
+<p>Serena는 이러한 문제들을 근본적으로 해결합니다:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>기존 방식:</span></span>
+<span class="line"><span>LLM → 텍스트 분석 → 추측 기반 수정 → 오류 가능성 높음</span></span>
+<span class="line"><span>Serena 방식:</span></span>
+<span class="line"><span>LLM → LSP 서버 → 심볼 분석 → 정확한 수정 → 안전성 보장</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="실제-사용-사례">실제 사용 사례</h3>
+<h3 id="사례-1-대규모-리팩토링">사례 1: 대규모 리팩토링</h3>
+<p>한 스타트업에서 100개 이상의 파일에 걸친 API 엔드포인트 네이밍 컨벤션을 변경해야 했습니다.</p>
+<ul>
+<li><strong>기존 방식</strong>: 3일 소요, 수동 검증 필요</li>
+<li><strong>Serena 활용</strong>: 2시간 만에 완료, 자동 검증</li>
+</ul>
+<h3 id="사례-2-레거시-코드-현대화">사례 2: 레거시 코드 현대화</h3>
+<p>5년된 Python 2.7 프로젝트를 Python 3.11로 마이그레이션:</p>
+<ul>
+<li><strong>문제</strong>: 복잡한 의존성, 수많은 deprecated 기능</li>
+<li><strong>해결</strong>: Serena가 모든 호환성 이슈를 자동 탐지하고 수정안 제시</li>
+</ul>
+<h2 id="serena-설치하기-mac-기준">Serena 설치하기 (Mac 기준)</h2>
+<p>이제 본격적으로 Serena를 설치해보겠습니다. 필자는 Mac 환경에서 작업했으며, Python이 이미 설치되어 있다고 가정하겠습니다.</p>
+<h3 id="사전-준비사항">사전 준비사항</h3>
+<ul>
+<li>macOS 12.0 이상</li>
+<li>Python 3.8 이상</li>
+<li>Git</li>
+<li>터미널 기본 사용법 숙지</li>
+</ul>
+<h3 id="1-uv-설치-python-패키지-매니저">1. uv 설치 (Python 패키지 매니저)</h3>
+<p>먼저 uv를 설치해야 합니다. uv는 Rust로 작성된 차세대 Python 패키지 매니저로, pip보다 10-100배 빠른 성능을 자랑합니다.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Homebrew를 사용한 설치 (권장)</span></span>
+<span class="line"><span>brew install uv</span></span>
+<span class="line"><span># 또는 공식 설치 스크립트 사용</span></span>
+<span class="line"><span>curl -LsSf https://astral.sh/uv/install.sh | sh</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>설치 확인:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>uv --version</span></span>
+<span class="line"><span># 출력 예: uv 0.4.x</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="2-serena-mcp-설치">2. Serena MCP 설치</h3>
+<p>Serena를 설치하는 방법은 두 가지가 있습니다:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>설치 방식</th><th>장점</th><th>단점</th><th>추천 대상</th></tr></thead><tbody><tr><td><strong>Local</strong></td><td>• 실행 속도가 빠름</td><td></td><td></td></tr><tr><td>• 오프라인 사용 가능</td><td></td><td></td><td></td></tr><tr><td>• 커스터마이징 가능</td><td>• 업데이트 시 수동으로 git pull 필요</td><td></td><td></td></tr><tr><td>• 디스크 공간 사용</td><td>자주 사용하는 개발자</td><td></td><td></td></tr><tr><td><strong>uvx</strong></td><td>• 항상 최신 버전 실행</td><td></td><td></td></tr><tr><td>• 설치 과정 불필요</td><td></td><td></td><td></td></tr><tr><td>• 여러 버전 동시 사용 가능</td><td>• 초기 실행 시 약간의 지연(2-3초)</td><td></td><td></td></tr><tr><td>• 인터넷 연결 필요</td><td>가끔 사용하거나 테스트 목적</td><td></td><td></td></tr></tbody></table>
+<h3 id="local-설치-방법">Local 설치 방법</h3>
+<p>필자는 안정성과 속도를 위해 Local 설치를 선택했습니다:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># 원하는 디렉토리로 이동 (예: ~/work)</span></span>
+<span class="line"><span>cd ~/work</span></span>
+<span class="line"><span># Serena 클론</span></span>
+<span class="line"><span>git clone https://github.com/oraios/serena</span></span>
+<span class="line"><span>cd serena</span></span>
+<span class="line"><span># 설정 파일 복사</span></span>
+<span class="line"><span>cp src/serena/resources/serena_config.template.yml ~/.serena/serena_config.yml</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="claude-code와-통합하기">Claude Code와 통합하기</h2>
+<h3 id="1-프로젝트별-serena-mcp-추가">1. 프로젝트별 Serena MCP 추가</h3>
+<p>Serena MCP의 특징은 프로젝트별로 개별적으로 추가해야 한다는 점입니다. 이는 각 프로젝트의 언어, 프레임워크, 구조가 다르고, 프로젝트별로 최적화된 설정을 적용하기 위함입니다.</p>
+<h3 id="a-자동화-스크립트-작성">a) 자동화 스크립트 작성</h3>
+<p>매번 긴 명령어를 입력하는 번거로움을 줄이기 위해 쉘 스크립트를 작성하겠습니다:</p>
+<p><strong>Local 설치 사용자용:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>#!/bin/bash</span></span>
+<span class="line"><span># 파일명: add-serena.sh</span></span>
+<span class="line"><span># Serena가 설치된 경로를 환경에 맞게 수정하세요</span></span>
+<span class="line"><span>SERENA_PATH=~/work/serena</span></span>
+<span class="line"><span># 현재 디렉토리에 Serena MCP 추가</span></span>
+<span class="line"><span>claude mcp add serena -- uv run --directory $SERENA_PATH serena-mcp-server --context ide-assistant</span></span>
+<span class="line"><span># 성공 메시지 출력</span></span>
+<span class="line"><span>echo "✅ Serena MCP가 $(pwd) 프로젝트에 추가되었습니다"</span></span>
+<span class="line"><span>echo "📌 Claude Code에서 /mcp__serena__initial_instructions 명령을 실행하세요"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p><strong>uvx 사용자용:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>#!/bin/bash</span></span>
+<span class="line"><span># 파일명: add-serena-uvx.sh</span></span>
+<span class="line"><span># uvx를 통해 Serena MCP 추가</span></span>
+<span class="line"><span>claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena-mcp-server --context ide-assistant</span></span>
+<span class="line"><span>echo "✅ Serena MCP가 $(pwd) 프로젝트에 추가되었습니다"</span></span>
+<span class="line"><span>echo "📌 Claude Code에서 /mcp__serena__initial_instructions 명령을 실행하세요"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>스크립트 저장 및 실행 권한 부여:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># 스크립트 저장 (예: ~/work/scripts/add-serena.sh)</span></span>
+<span class="line"><span>chmod +x ~/work/scripts/add-serena.sh</span></span>
+<span class="line"><span># .bashrc 또는 .zshrc에 alias 추가 (선택사항)</span></span>
+<span class="line"><span>echo "alias add-serena='~/work/scripts/add-serena.sh'" >> ~/.zshrc</span></span>
+<span class="line"><span>source ~/.zshrc</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="b-프로젝트에-serena-추가하기">b) 프로젝트에 Serena 추가하기</h3>
+<p>이제 Serena를 사용하고자 하는 프로젝트로 이동해서 스크립트를 실행합니다:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cd ~/projects/my-awesome-project</span></span>
+<span class="line"><span>~/work/scripts/add-serena.sh</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>성공적으로 추가되면 다음과 같은 메시지가 표시됩니다:</p>
+<p><img src="https://www.dropbox.com/scl/fi/1qvi3jpq3i87jfz3oc9sc/add-serena.png?rlkey=clm7poi32v4iamcifsahx1vg5&#x26;st=jemdetl6&#x26;dl=1" alt=""></p>
+<h3 id="2-프로젝트-활성화-및-온보딩">2. 프로젝트 활성화 및 온보딩</h3>
+<h3 id="초기화-명령-실행">초기화 명령 실행</h3>
+<p>Claude Code를 실행하고 다음 명령을 입력합니다:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/mcp__serena__initial_instructions</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>이 명령어를 실행하면 자동으로 onboarding 프로세스가 시작됩니다. 이 명령어는 onboarding 뿐만 아니라 아래와 같은 경우 실행해야 Serena를 fully 활용할 수 있습니다.</p>
+<ul>
+<li>새로운 Claude Code 세션 시작 시</li>
+<li>Claude가 메모리 압축(compacting) 후</li>
+<li>프로젝트를 전환할 때</li>
+</ul>
+<p><img src="https://www.dropbox.com/scl/fi/x7oyxcwp71gqlwa8uf655/onboarding.png?rlkey=c5swul3zm1iflb5ad5uhcj713&#x26;st=lhbjdo6u&#x26;dl=1" alt=""></p>
+<h3 id="serena-온보딩-프로세스">Serena 온보딩 프로세스</h3>
+<p>온보딩 명령을 실행하면 Serena가 자동으로 다음 작업들을 수행합니다:</p>
+<ol>
+<li><strong>프로젝트 구조 분석</strong>
+<ul>
+<li>디렉토리 트리 스캔</li>
+<li>주요 파일 식별</li>
+<li>.gitignore 패턴 적용</li>
+</ul>
+</li>
+<li><strong>기술 스택 파악</strong>
+<ul>
+<li>사용 언어 감지</li>
+<li>프레임워크 식별</li>
+<li>패키지 매니저 확인</li>
+</ul>
+</li>
+<li><strong>개발 환경 이해</strong>
+<ul>
+<li>빌드 도구 확인</li>
+<li>테스트 프레임워크 감지</li>
+<li>린터/포매터 설정 파악</li>
+</ul>
+</li>
+<li><strong>코드베이스 인덱싱</strong>
+<ul>
+<li>모든 심볼 추출</li>
+<li>의존성 그래프 생성</li>
+<li>호출 관계 매핑</li>
+</ul>
+</li>
+<li><strong>메모리 파일 생성</strong>
+<ul>
+<li>프로젝트 요약 정보</li>
+<li>주요 엔트리 포인트</li>
+<li>아키텍처 개요</li>
+</ul>
+</li>
+<li><strong>프로젝트별 설정 생성</strong>
+<ul>
+<li>LSP 서버 구성</li>
+<li>제외 패턴 설정</li>
+<li>최적화 옵션 적용</li>
+</ul>
+</li>
+</ol>
+<p>온보딩이 완료되면 상세한 프로젝트 분석 결과가 표시됩니다:</p>
+<p><img src="https://www.dropbox.com/scl/fi/5on4b400j4gqirk511ukj/onboarding_result.png?rlkey=deiw7me5rbngx1bol2ujexre3&#x26;st=vmkbu5lx&#x26;dl=1" alt=""></p>
+<p>자, 여기까지 오셨으면 이제 Serena를 통합하여 Claude Code를 사용할 수 있습니다.</p>
+<h2 id="serena의-핵심-도구들과-활용법">Serena의 핵심 도구들과 활용법</h2>
+<h3 id="도구-카테고리별-분류">도구 카테고리별 분류</h3>
+<p>Serena는 40개 이상의 강력한 도구를 제공합니다. 이를 용도별로 분류하면:</p>
+<h3 id="1-프로젝트-관리-도구">1. 프로젝트 관리 도구</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>도구명</th><th>설명</th><th>활용 예시</th></tr></thead><tbody><tr><td><code>activate_project</code></td><td>프로젝트 전환 및 활성화</td><td>“frontend 프로젝트로 전환해줘”</td></tr><tr><td><code>onboarding</code></td><td>프로젝트 초기 분석 수행</td><td>“이 프로젝트 구조를 분석해줘”</td></tr><tr><td><code>get_active_project</code></td><td>현재 활성 프로젝트 확인</td><td>“지금 어떤 프로젝트에서 작업 중이야?”</td></tr></tbody></table>
+<h3 id="2-코드-검색-및-분석-도구">2. 코드 검색 및 분석 도구</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>도구명</th><th>설명</th><th>활용 예시</th></tr></thead><tbody><tr><td><code>find_symbol</code></td><td>심볼 검색 (함수, 클래스, 변수)</td><td>“authenticate 함수를 찾아줘”</td></tr><tr><td><code>find_referencing_symbols</code></td><td>특정 심볼을 참조하는 코드 찾기</td><td>“User 클래스를 사용하는 모든 파일 보여줘”</td></tr><tr><td><code>search_for_pattern</code></td><td>정규표현식 패턴 검색</td><td>“TODO 주석이 있는 모든 코드 찾아줘”</td></tr><tr><td><code>get_symbols_overview</code></td><td>파일/디렉토리의 심볼 개요</td><td>“models 폴더의 모든 클래스 구조 보여줘”</td></tr></tbody></table>
+<h3 id="3-코드-편집-도구">3. 코드 편집 도구</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>도구명</th><th>설명</th><th>활용 예시</th></tr></thead><tbody><tr><td><code>replace_symbol_body</code></td><td>심볼 전체 교체</td><td>“이 함수를 async 버전으로 바꿔줘”</td></tr><tr><td><code>insert_before_symbol</code></td><td>심볼 앞에 코드 삽입</td><td>“모든 클래스에 docstring 추가해줘”</td></tr><tr><td><code>insert_after_symbol</code></td><td>심볼 뒤에 코드 삽입</td><td>“각 함수 끝에 로깅 추가해줘”</td></tr><tr><td><code>replace_lines</code></td><td>특정 라인 범위 교체</td><td>“15-20번 라인을 새 로직으로 교체해줘”</td></tr></tbody></table>
+<h3 id="4-파일-시스템-작업">4. 파일 시스템 작업</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>도구명</th><th>설명</th><th>활용 예시</th></tr></thead><tbody><tr><td><code>create_text_file</code></td><td>새 파일 생성</td><td>“test_user.py 파일 만들어줘”</td></tr><tr><td><code>read_file</code></td><td>파일 내용 읽기</td><td>“config.json 내용 보여줘”</td></tr><tr><td><code>list_dir</code></td><td>디렉토리 목록 조회</td><td>“src 폴더 구조 보여줘”</td></tr><tr><td><code>delete_lines</code></td><td>파일 내 특정 라인 삭제</td><td>“주석 처리된 코드 모두 삭제해줘”</td></tr></tbody></table>
+<h3 id="5-메모리-및-컨텍스트-관리">5. 메모리 및 컨텍스트 관리</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>도구명</th><th>설명</th><th>활용 예시</th></tr></thead><tbody><tr><td><code>write_memory</code></td><td>중요 정보 저장</td><td>“이 API 엔드포인트 설명을 기억해둬”</td></tr><tr><td><code>read_memory</code></td><td>저장된 정보 조회</td><td>“어제 논의한 아키텍처 결정사항 뭐였지?”</td></tr><tr><td><code>list_memories</code></td><td>모든 메모리 목록</td><td>“지금까지 저장한 정보들 보여줘”</td></tr><tr><td><code>delete_memory</code></td><td>메모리 삭제</td><td>“임시 메모 삭제해줘”</td></tr></tbody></table>
+<h3 id="실전-활용-시나리오">실전 활용 시나리오</h3>
+<h3 id="시나리오-1-대규모-리팩토링">시나리오 1: 대규모 리팩토링</h3>
+<p><strong>상황</strong>: 전체 프로젝트에서 camelCase를 snake_case로 변경</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>사용자: "모든 함수명을 snake_case로 변경해줘"</span></span>
+<span class="line"><span>Serena 활용 과정:</span></span>
+<span class="line"><span>1. find_symbol로 모든 함수 검색</span></span>
+<span class="line"><span>2. find_referencing_symbols로 각 함수 호출 위치 파악</span></span>
+<span class="line"><span>3. replace_symbol_body로 함수명 변경</span></span>
+<span class="line"><span>4. 참조하는 모든 위치 자동 업데이트</span></span>
+<span class="line"><span>5. summarize_changes로 변경사항 요약</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="시나리오-2-코드-품질-개선">시나리오 2: 코드 품질 개선</h3>
+<p><strong>상황</strong>: 전체 코드베이스에 타입 힌트 추가</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>사용자: "모든 Python 함수에 타입 힌트를 추가해줘"</span></span>
+<span class="line"><span>Serena 활용 과정:</span></span>
+<span class="line"><span>1. search_for_pattern으로 타입 힌트 없는 함수 찾기</span></span>
+<span class="line"><span>2. 각 함수의 사용 패턴 분석</span></span>
+<span class="line"><span>3. 적절한 타입 추론</span></span>
+<span class="line"><span>4. insert_before_symbol로 import 문 추가</span></span>
+<span class="line"><span>5. replace_symbol_body로 함수 시그니처 업데이트</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="시나리오-3-보안-취약점-수정">시나리오 3: 보안 취약점 수정</h3>
+<p><strong>상황</strong>: SQL 인젝션 취약점이 있는 코드 찾아 수정</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>사용자: "SQL 인젝션 취약점을 찾아서 수정해줘"</span></span>
+<span class="line"><span>Serena 활용 과정:</span></span>
+<span class="line"><span>1. search_for_pattern으로 직접 문자열 조합 SQL 찾기</span></span>
+<span class="line"><span>2. 취약한 패턴 식별</span></span>
+<span class="line"><span>3. Prepared Statement로 변환</span></span>
+<span class="line"><span>4. 테스트 코드 생성</span></span>
+<span class="line"><span>5. 변경사항 검증</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="고급-활용-팁">고급 활용 팁</h3>
+<h3 id="1-심볼-기반-네비게이션">1. 심볼 기반 네비게이션</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"UserController의 모든 메서드를 보여주고, 각 메서드가 호출하는 서비스도 함께 보여줘"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>이런 요청 시 Serena는:</p>
+<ul>
+<li>UserController 클래스 구조 분석</li>
+<li>각 메서드의 의존성 추적</li>
+<li>서비스 레이어 연결 관계 시각화</li>
+</ul>
+<h3 id="2-스마트-리팩토링">2. 스마트 리팩토링</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"이 함수가 너무 길어. 적절히 분리해서 리팩토링해줘"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Serena의 처리:</p>
+<ul>
+<li>함수 내 논리적 블록 식별</li>
+<li>공통 파라미터 분석</li>
+<li>새로운 헬퍼 함수 생성</li>
+<li>원본 함수 재구성</li>
+<li>모든 호출 위치 업데이트</li>
+</ul>
+<h3 id="3-프로젝트-전체-분석">3. 프로젝트 전체 분석</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"이 프로젝트의 순환 의존성을 찾아줘"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>분석 과정:</p>
+<ul>
+<li>모든 import 문 수집</li>
+<li>의존성 그래프 생성</li>
+<li>순환 참조 탐지</li>
+<li>해결 방안 제시</li>
+</ul>
+<h2 id="claude-code-통합-최적화">Claude Code 통합 최적화</h2>
+<h3 id="1-command-설정">1. Command 설정</h3>
+<p><code>/mcp__serena__initial_instructions</code>는 자주 사용하지만 입력하기 번거롭습니다. 커스텀 커맨드를 만들어보겠습니다:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>description: Init Serena MCP</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>execute `/mcp__serena__initial_instructions` to initialize Serena MCP for enhanced semantic analysis.</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>이 파일을 <code>~/.claude/commands/init-serena.md</code>로 저장하면, <code>/init-serena</code>로 간단히 실행할 수 있습니다.</p>
+<h3 id="2-command로-sub-agent와의-통합">2. Command로 Sub-agent와의 통합</h3>
+<p>/mcp__serena_initialy_instructions을 먼저 실행하게 하여 Sub agent와 통합합니다.</p>
+<p>Python 분석 전용 sub-agent 예시:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>description: Analyze Python code architecture, performance, and patterns</span></span>
+<span class="line"><span>argument-hint:</span></span>
+<span class="line"><span>  [analysis request, e.g., 'find all async functions', 'identify memory usage patterns']</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>First, execute `/mcp__serena__initial_instructions` to initialize Serena MCP for enhanced semantic analysis.</span></span>
+<span class="line"><span>Then, call the **py-analyzer** sub agent to perform comprehensive Python code analysis.</span></span>
+<span class="line"><span>Analyze the following Python request:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- Code architecture and module structure analysis</span></span>
+<span class="line"><span>- Performance bottlenecks and optimization opportunities</span></span>
+<span class="line"><span>- Memory usage and garbage collection pattern analysis</span></span>
+<span class="line"><span>- Dependency management and import analysis</span></span>
+<span class="line"><span>- Custom queries about the Python codebase</span></span>
+<span class="line"><span>$ARGUMENTS</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="마치며">마치며</h2>
+<p>잊지마시고 Claude Code 시작할 때, Claude Code가 compacting 한 후 /init-serena Command를 입력해주세요. 그것만으로도 Serena로 많은 부분 혜택을 누릴 수 있습니다. 아무쪼록 이 포스팅으로 Serena와 함께 HAPPY CLAUDE CODING 하시길 바랍니다.</p>
+<blockquote>
+<p>마지막 TIP: Claude Code를 실행하여 Serena MCP가 실행되면 자동으로 웹브라우저가 열리면서 Dash Board가 뜹니다. 이를 Turn off하시려면 ~/.serena/serena_config.yml에서 web_dashboard를 false로 해주시면 됩니다.</p>
+</blockquote>
+<hr>
+<h3 id="references">References</h3>
+<ol>
+<li><a href="https://github.com/oraios/serena">Serena 공식 GitHub</a></li>
+<li><a href="https://modelcontextprotocol.io/">Model Context Protocol 문서</a></li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP 가이드</a></li>
+<li><a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol 개요</a></li>
+<li><a href="https://docs.astral.sh/uv/">uv Python 패키지 매니저</a></li>
+</ol> </article> </div> <script type="module">
+      // 목적: index.json에서 현재 글 메타/썸네일을 찾아 상세 화면에 반영한다.
+      async function hydrateMeta() {
+        try {
+          const BASE = import.meta.env.BASE_URL;
+          const slug = decodeURIComponent(location.pathname.replace(/.*\/post\//,'').replace(/\/?$/,''));
+          const res = await fetch(`${BASE}index.json`);
+          const data = await res.json();
+          const items = (data && data.items) || [];
+          const item = items.find((i) => i.slug === slug);
+          if (!item) return;
+
+          const hero = document.getElementById('hero');
+          const heroImg = document.getElementById('heroImg');
+          const source = document.getElementById('source');
+          const cta = document.getElementById('ctaSource');
+          if (item.thumbnail && hero && heroImg) {
+            heroImg.setAttribute('src', item.thumbnail);
+            hero.style.display = 'block';
+          }
+          if (item.source_url && source && cta) {
+            source.setAttribute('href', item.source_url);
+            cta.setAttribute('href', item.source_url);
+            source.style.display='inline-block';
+            cta.style.display='inline-block';
+          }
+        } catch {}
+      }
+      hydrateMeta();
+
+      // 복사 버튼 제거됨 — 상단에 원문 보기 버튼만 유지
+    </script> </body> </html>

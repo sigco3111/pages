@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="ko" data-astro-cid-ztig7rse> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>상세</title><link rel="icon" href="/pages/favicon.svg" type="image/svg+xml"><link rel="icon" href="/pages/favicon-32x32.png" sizes="32x32"><link rel="apple-touch-icon" href="/pages/apple-touch-icon.png" sizes="180x180"><style>:root{color-scheme:light dark}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.wrap[data-astro-cid-ztig7rse]{max-width:860px;margin:0 auto;padding:20px}.topbar[data-astro-cid-ztig7rse]{position:sticky;top:0;backdrop-filter:blur(6px);background:color-mix(in oklab,canvas,transparent 35%);border-bottom:1px solid color-mix(in oklab,canvastext,transparent 90%);z-index:10}.topbar[data-astro-cid-ztig7rse] .inner[data-astro-cid-ztig7rse]{display:flex;align-items:center;gap:8px;padding:10px 20px;max-width:860px;margin:0 auto}.btn[data-astro-cid-ztig7rse]{appearance:none;border:1px solid color-mix(in oklab,canvastext,transparent 85%);background:transparent;color:inherit;border-radius:10px;padding:8px 12px;cursor:pointer;font-size:14px}.btn[data-astro-cid-ztig7rse].primary{background:#111827;color:#fff;border-color:#111827}@media (prefers-color-scheme: dark){.btn[data-astro-cid-ztig7rse].primary{background:#e5e7eb;color:#111827;border-color:#e5e7eb}}.hero[data-astro-cid-ztig7rse]{margin:14px 0 8px;display:none}.hero[data-astro-cid-ztig7rse] img[data-astro-cid-ztig7rse]{width:100%;height:auto;border-radius:12px;display:block;background:#f3f4f6}article[data-astro-cid-ztig7rse]{line-height:1.72;font-size:16px}article[data-astro-cid-ztig7rse] :is(h1,h2,h3)[data-astro-cid-ztig7rse]{line-height:1.25;margin:24px 0 10px}article[data-astro-cid-ztig7rse] h1[data-astro-cid-ztig7rse]{font-size:28px}article[data-astro-cid-ztig7rse] h2[data-astro-cid-ztig7rse]{font-size:22px}article[data-astro-cid-ztig7rse] h3[data-astro-cid-ztig7rse]{font-size:18px}article[data-astro-cid-ztig7rse] p[data-astro-cid-ztig7rse]{margin:10px 0}article[data-astro-cid-ztig7rse] img[data-astro-cid-ztig7rse]{max-width:100%;height:auto;border-radius:8px;background:#f3f4f6}article[data-astro-cid-ztig7rse] pre[data-astro-cid-ztig7rse]{overflow:auto;padding:14px;border:1px solid color-mix(in oklab,canvastext,transparent 90%);border-radius:10px;background:color-mix(in oklab,canvastext,transparent 96%)}article[data-astro-cid-ztig7rse] code[data-astro-cid-ztig7rse]:not(pre code){background:color-mix(in oklab,canvastext,transparent 94%);padding:2px 6px;border-radius:6px}article[data-astro-cid-ztig7rse] blockquote[data-astro-cid-ztig7rse]{border-left:3px solid #9CA3AF;margin:8px 0;padding:4px 12px;color:#6b7280}.actions[data-astro-cid-ztig7rse]{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+</style></head> <body class="container" style="padding:24px;max-width:900px" data-astro-cid-ztig7rse> <div class="topbar" data-astro-cid-ztig7rse> <div class="inner" data-astro-cid-ztig7rse> <a class="btn" href="/pages/" aria-label="홈으로" data-astro-cid-ztig7rse>← 홈</a> <a class="btn" id="source" href="#" target="_blank" rel="noopener" style="display:none" data-astro-cid-ztig7rse>원문 보기</a> </div> </div> <div class="wrap" data-astro-cid-ztig7rse> <h1 style="margin:10px 0 6px" data-astro-cid-ztig7rse></h1> <div class="hero" id="hero" data-astro-cid-ztig7rse><img alt="" id="heroImg" loading="eager" data-astro-cid-ztig7rse></div> <div class="actions" data-astro-cid-ztig7rse> <a class="btn primary" id="ctaSource" href="#" target="_blank" rel="noopener" style="display:none" data-astro-cid-ztig7rse>원문 바로가기</a> </div> <article data-astro-cid-ztig7rse> <h1 id="apple의-diffucoder-확산-모델을-사용한-코드-생성">Apple의 DiffuCoder 확산 모델을 사용한 코드 생성</h1>
+<p>발견일: 2025/07/09
+원문 URL: <a href="https://github.com/apple/ml-diffucoder">https://github.com/apple/ml-diffucoder</a>
+분류: 오픈소스
+원문 Source: 🔗github
+즐겨찾기: No</p>
+<h2 id="masked-diffusion-models-for-code-generation">Masked Diffusion Models for Code Generation</h2>
+<p>코드 생성을 위한 마스킹된 확산 모델</p>
+<p><a href="https://camo.githubusercontent.com/f191a33a959369475e8c3743c17bdd2d069fdaee1abd8bf3cf042ebd1844e5ea/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617065722d41727869762532304c696e6b2d677265656e"></a></p>
+<p><a href="https://camo.githubusercontent.com/14e900c44228cffa80904c2e05a53ca33d84a63d198c411a9f8e67b008594322/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4170706c652d626c7565"></a></p>
+<p><a href="https://camo.githubusercontent.com/92d7302321a11da62ca18a3261e59653a8bd21c98a0519205c134ba22eaa95c2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48756767696e67253230466163652d4469666675436f6465725f426173652d464645423342"></a></p>
+<p><a href="https://camo.githubusercontent.com/29eaa740d50677ab100f9430003418fc85f2ff2c9d98c1f756c72f7269d2c15b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48756767696e67253230466163652d4469666675436f6465725f496e7374727563742d464645423342"></a></p>
+<p><a href="https://camo.githubusercontent.com/6bae1026ea3606363463b7109ae30993b6bcac1f610a9709a5ec05d0179892f0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48756767696e67253230466163652d4469666675436f6465725f63704752504f2d464645423342"></a></p>
+<p>This software project accompanies the research paper, <a href="https://arxiv.org/abs/2506.20639">DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation</a>.
+이 소프트웨어 프로젝트는 연구 논문인 <a href="https://arxiv.org/abs/2506.20639">DiffuCoder: 코드 생성을 위한 마스킹 확산 모델 이해 및 개선</a>과 함께 제공됩니다.</p>
+<h3 id="updates-업데이트">Updates 업데이트</h3>
+<p><strong>MLX support on Apple Silicon is in progress. We will make necessary updates to the repository once it is available.</strong>
+<strong>Apple Silicon에서 MLX 지원이 진행 중입니다. 저장소가 사용 가능해지면 필요한 업데이트를 수행할 것입니다.</strong></p>
+<ul>
+<li>July 8, 2025. We are still training for 14B models, to be updated.
+2025년 7월 8일. 우리는 여전히 업데이트될 14B 모델에 대한 훈련 중입니다.</li>
+<li>July 7, 2025. <a href="https://huggingface.co/mlx-community/DiffuCoder-7B-cpGRPO-8bit">MLX community implementation of DiffuCoder 8bit model</a>
+2025년 7월 7일. <a href="https://huggingface.co/mlx-community/DiffuCoder-7B-cpGRPO-8bit">DiffuCoder 8비트 모델의 MLX 커뮤니티 구현</a></li>
+<li>July 4, 2025. <a href="https://github.com/ml-explore/mlx">MLX</a> support in progress. To preview or contribute, please check out this PR started by @Goekdeniz-Guelmez:
+2025년 7월 4일. <a href="https://github.com/ml-explore/mlx">MLX</a> 지원이 진행 중입니다. 미리 보거나 기여하려면 @Goekdeniz-Guelmez가 시작한 PR을 확인하세요.<a href="https://github.com/ml-explore/mlx-lm/pull/270">this PR</a></li>
+<li>July 4, 2025. Update inference usage/examples/demo.
+2025년 7월 4일. 추론 사용/예제/데모를 업데이트합니다.</li>
+<li>July 2, 2025. Models are available on Huggingface.
+2025년 7월 2일. 모델은 Huggingface에서 사용할 수 있습니다.</li>
+<li>July 1, 2025. Code is available.
+2025년 7월 1일. 코드를 사용할 수 있습니다.</li>
+</ul>
+<p><img src="https://github.com/apple/ml-diffucoder/raw/main/figs/teaser.png" alt=""></p>
+<h3 id="motivation-동기">Motivation 동기</h3>
+<p>Scaling upon Masked Denoising Models (MDMs), diffusion LLMs (dLLMs) such as <a href="https://ml-gsai.github.io/LLaDA-demo/">LLaDA</a> and <a href="https://hkunlp.github.io/blog/2025/dream/">Dream</a> have achieved performance on par with similarly sized autoregressive (AR) LLMs across many benchmarks. Recent commercial-scale dLLMs like <a href="https://chat.inceptionlabs.ai/">Mercury</a> and <a href="https://deepmind.google/models/gemini-diffusion/">Gemini</a> further demonstrate that diffusion-based code generators can rival top AR code models on programming tasks while offering faster text generation.
+마스킹 노이즈 제거 모델(MDM), <a href="https://ml-gsai.github.io/LLaDA-demo/">LLaDA</a> 및 <a href="https://hkunlp.github.io/blog/2025/dream/">Dream</a>과 같은 확산 LLM(dLLM)에 대한 확장은 많은 벤치마크에서 유사한 크기의 자가회귀(AR) LLM과 동등한 성능을 달성했습니다. <a href="https://chat.inceptionlabs.ai/">Mercury</a> 및 <a href="https://deepmind.google/models/gemini-diffusion/">Gemini</a>와 같은 최근의 상용 규모 dLLM은 확산 기반 코드 생성기가 프로그래밍 작업에서 최고의 AR 코드 모델과 경쟁하는 동시에 더 빠른 텍스트 생성을 제공할 수 있음을 더욱 보여줍니다.</p>
+<p>However, the generation pattern and post-training strategies of dLLMs remain under-explored. In this work, we investigate the following questions:
+그러나 dLLM의 생성 패턴과 훈련 후 전략은 아직 연구되지 않았습니다. 이 작업에서는 다음 질문을 조사합니다.</p>
+<ul>
+<li><strong>How does the generation pattern of dLLMs differ from AR models?</strong>
+<strong>dLLM의 생성 패턴은 AR 모델과 어떻게 다른가요?</strong></li>
+<li><strong>What is the difference in modeling different data modalities, such as code vs. math?</strong>
+<strong>코드와 수학과 같은 다양한 데이터 양식을 모델링할 때 어떤 차이점이 있나요?</strong></li>
+<li><strong>How diverse can dLLMs be, and how should post-training be designed?</strong>
+<strong>dLLM은 얼마나 다양할 수 있으며, 사후 교육은 어떻게 설계해야 합니까?</strong></li>
+</ul>
+<p><img src="https://github.com/apple/ml-diffucoder/raw/main/figs/pipeline.png" alt=""></p>
+<p>We train <strong>DiffuCoder</strong> using the adaptation approach in <a href="https://github.com/HKUNLP/DiffuLLaMA">DiffuLLaMA</a> and introduce a new metric — <strong>autoregressiveness score</strong> — to quantify the causal pattern during dLLM generation. The key findings are listed below.
+<a href="https://github.com/HKUNLP/DiffuLLaMA">DiffuLLaMA</a>의 적응 접근 방식을 사용하여 <strong>DiffuCoder</strong>를 훈련하고 dLLM 생성 중 인과 패턴을 정량화하기 위해 새로운 지표인 <strong>자기 회귀 점수</strong>를 도입합니다. 주요 결과는 다음과 같습니다.</p>
+<h3 id="findings-결과">Findings 결과</h3>
+<ul>
+<li>dLLMs still exhibit a left-to-right bias due to the nature of text, but they can also break this strict order in AR models.
+dLLM은 텍스트의 특성으로 인해 여전히 왼쪽에서 오른쪽으로 편향되지만 AR 모델에서 이러한 엄격한 순서를 깨뜨릴 수도 있습니다.</li>
+<li>After pre-training, we show that code tasks induce less global AR-ness than math.
+사전 훈련 후 코드 작업이 수학보다 글로벌 AR성을 덜 유도한다는 것을 보여줍니다.</li>
+<li>In dLLMs, changing the sampling temperature not only affects sampled tokens (as in AR models), but also alters the generation order itself.
+dLLM에서 샘플링 온도를 변경하면 샘플링된 토큰(AR 모델에서와 같이 )에 영향을 미칠 뿐만 아니라 생성 순서 자체도 변경됩니다.</li>
+</ul>
+<p>For more interesting findings, please refer to our original paper!
+더 흥미로운 결과를 원하시면 원본 논문을 참조하세요!</p>
+<p>We propose <strong>Coupled-GRPO</strong>, a post-training method to improve DiffuCoder’s performance.
+DiffuCoder의 성능을 향상시키기 위한 사후 학습 방법인 <strong>Coupled-GRPO</strong>를 제안합니다.</p>
+<hr>
+<h3 id="coupled-grpo-결합-grpo">Coupled-GRPO 결합-GRPO</h3>
+<p>In diffusion LLMs, the per-timestep loss L t typically computes log-probabilities only at masked token positions, which leads to inefficiency and high variance when sampling is limited. To address this, <strong>Coupled-GRPO</strong> introduces a <em>coupled-sampling</em> scheme:
+확산 LLM에서 시간단계 손실 L t 은 일반적으로 마스킹된 토큰 위치에서만 로그 확률을 계산하므로 샘플링이 제한될 때 비효율성과 높은 분산이 발생합니다. 이 문제를 해결하기 위해 <strong>Coupled-GRPO</strong>는 <em>결합 샘플링</em> 체계를 도입합니다.</p>
+<ul>
+<li>For each training example, we select λ pairs of timesteps ( t , t ^ ) such that t + t ^ = T .
+각 훈련 예제에 대해 다음과 같은 시간 단계 ( t , t ) 쌍을 선택합니다 λ . t + t = T</li>
+<li>We apply two complementary token masks — each mask hides part of the tokens, and together they cover the entire set of target tokens.
+두 개의 보완적인 토큰 마스크를 적용합니다 — 각 마스크는 토큰의 일부를 숨기고 함께 전체 대상 토큰 세트를 덮습니다.</li>
+<li>As a result, every token is unmasked in exactly one of the two forward passes.
+결과적으로 모든 토큰은 두 개의 전달 패스 중 정확히 하나에서 마스킹되지 않습니다.</li>
+</ul>
+<p>This ensures that: 이를 통해 다음을 보장합니다.</p>
+<ol>
+<li>Every token’s log-probability is computed at least once, providing a non-zero learning signal for all tokens.
+모든 토큰의 로그 확률은 적어도 한 번 계산되어 모든 토큰에 대해 0이 아닌 학습 신호를 제공합니다.</li>
+<li>The probability estimates are more accurate, since each token is evaluated in a realistic partially-masked context (rather than always being fully masked).
+확률 추정치는 각 토큰이 항상 완전히 마스킹되는 것이 아니라 부분적으로 마스킹된 현실적인 컨텍스트에서 평가되기 때문에 더 정확합니다.</li>
+<li>The scheme effectively uses 2 λ times more sampling passes than the baseline (we choose λ = 1 ), improving estimation with modest computational overhead.
+이 체계는 기준선(우리가 선택) λ = 1 보다 몇 배 더 많은 샘플링 패스를 효과적으로 사용하여 2 λ 적당한 계산 오버헤드로 추정을 개선합니다.</li>
+</ol>
+<p>In this repository, we release our implementation of <strong>Coupled-GRPO</strong>, built upon <a href="https://github.com/huggingface/open-r1/blob/6a0cd5c8ad031fc75118a4ce7f42a4860c3d8dea/">open-r1</a>.
+이 저장소에서는 <a href="https://github.com/huggingface/open-r1/blob/6a0cd5c8ad031fc75118a4ce7f42a4860c3d8dea/">open-r1</a>을 기반으로 구축된 <strong>Coupled-GRPO</strong>의 구현을 릴리스합니다.</p>
+<h3 id="getting-started-시작">Getting Started 시작</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>├── run.sh # start training</span></span>
+<span class="line"><span>├── setup.py # modified open-r1/setup.py</span></span>
+<span class="line"><span>├── src/open_r1/ #  our code based on open-r1</span></span>
+<span class="line"><span>│   ├── configs.py # with diffusion related params</span></span>
+<span class="line"><span>│   ├── coupled_grpo.py # inherits trl GRPOTrainer </span></span>
+<span class="line"><span>│   ├── grpo.py # main training script</span></span>
+<span class="line"><span>│   ├── rewards.py # rewrite code reward and code_format reward </span></span>
+<span class="line"><span>│   ├── utils/code_providers.py # rewrite pass rate extraction for E2B</span></span>
+<span class="line"><span>├── recipes/process_data.py # prepare grpo training data</span></span>
+<span class="line"><span>├── recipes/config_coupled_code.yaml # training config</span></span>
+<span class="line"><span>├── tests/test_code_reward.py # test sandbox execution for code</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="1-prepare-code-and-environment">1. Prepare code and environment</h3>
+<ol>
+<li>코드 및 환경 준비</li>
+</ol>
+<p>Clone the source code of Open-R1 from <code>git clone https://github.com/huggingface/open-r1</code>. Merge and replace files between ours and Open-R1’s (including <code>setup.py</code>).
+에서 Open-R1의 소스 코드를 복제합니다 <code>git clone https://github.com/huggingface/open-r1</code> . 당사와 Open-R1(<code>setup.py</code> 포함) 간의 파일을 병합하고 교체합니다.</p>
+<p>Set up the environment and dependencies following Open-R1:
+Open-R1 다음에 환경 및 종속성을 설정합니다.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>env=openr1</span></span>
+<span class="line"><span>conda create -n $env python=3.11 -y -c anaconda</span></span>
+<span class="line"><span>conda activate $env</span></span>
+<span class="line"><span>pip install vllm==0.8.4</span></span>
+<span class="line"><span>pip install setuptools</span></span>
+<span class="line"><span>pip install flash-attn==2.8.0.post1 --no-build-isolation</span></span>
+<span class="line"><span>pip install -e ".[code]"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Prepare a code sandbox at <a href="https://e2b.dev/">E2B</a>. Export your E2B token to <code>E2B_API_KEY</code> environment variable. Log in to wandb and export your <code>WANDB_ENTITY</code>.
+<a href="https://e2b.dev/">E2B</a>에서 코드 샌드박스를 준비합니다. E2B 토큰을 <code>E2B_API_KEY</code> 환경 변수로 내보냅니다. wandb에 로그인하고 <code>WANDB_ENTITY</code> 내보냅니다.</p>
+<h3 id="2-data-preparation-2-데이터-준비">2. Data preparation 2. 데이터 준비</h3>
+<p>We prepare a hard split of GRPO training data based on <a href="https://huggingface.co/datasets/TIGER-Lab/AceCode-87K">AceCode-89k</a>.
+<a href="https://huggingface.co/datasets/TIGER-Lab/AceCode-87K">AceCode-89k</a>를 기반으로 GRPO 훈련 데이터의 하드 분할을 준비합니다.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cd recipes</span></span>
+<span class="line"><span>python process_data.py --dataset_path "TIGER-Lab/AceCode-89K" --output_path "./acecode_hard.jsonl" --difficulty "hard"</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="3-start-grpo-training-3-grpo-교육-시작">3. Start GRPO training 3. GRPO 교육 시작</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cd ..</span></span>
+<span class="line"><span>bash run.sh </span></span>
+<span class="line"><span># in `run.sh`, we start e2b server locally, but you can also run it on CPU clusters.</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="inference-추론">Inference 추론</h3>
+<p>The DiffuCoder models (<a href="https://huggingface.co/apple/DiffuCoder-7B-Base">Base</a>, <a href="https://huggingface.co/apple/DiffuCoder-7B-Instruct">Instruct</a>, and <a href="https://huggingface.co/apple/DiffuCoder-7B-cpGRPO">cpGRPO</a>) are now available on HuggingFace. Change <code>TOKEN_PER_STEP</code> to trade off between performance and speed.
+이제 DiffuCoder 모델(<a href="https://huggingface.co/apple/DiffuCoder-7B-Base">Base</a>, <a href="https://huggingface.co/apple/DiffuCoder-7B-Instruct">Instruct</a> 및 <a href="https://huggingface.co/apple/DiffuCoder-7B-cpGRPO">cpGRPO)</a>을 HuggingFace에서 사용할 수 있습니다. 성능과 속도 사이에서 균형을 맞추기 위해 <code>TOKEN_PER_STEP</code>를 변경하십시오.</p>
+<p>Usage for Base model (click to expand)
+기본 모델에 대한 사용(확장하려면 클릭)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import torch</span></span>
+<span class="line"><span>from transformers import AutoModel, AutoTokenizer</span></span>
+<span class="line"><span>model_path = "apple/DiffuCoder-7B-Base"</span></span>
+<span class="line"><span>model = AutoModel.from_pretrained(model_path, torch_dtype=torch.bfloat16, trust_remote_code=True)</span></span>
+<span class="line"><span>tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)</span></span>
+<span class="line"><span>model = model.to("cuda").eval()</span></span>
+<span class="line"><span>prompt = """</span></span>
+<span class="line"><span>from typing import List</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def has_close_elements(numbers: List[float], threshold: float) -> bool:</span></span>
+<span class="line"><span>    \"\"\"</span></span>
+<span class="line"><span>    Check if in given list of numbers, are any two numbers closer to each other than given threshold.</span></span>
+<span class="line"><span>    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)</span></span>
+<span class="line"><span>    False</span></span>
+<span class="line"><span>    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)</span></span>
+<span class="line"><span>    True</span></span>
+<span class="line"><span>    \"\"\"</span></span>
+<span class="line"><span>"""</span></span>
+<span class="line"><span>TOKEN_PER_STEP = 1 # diffusion timesteps * TOKEN_PER_STEP = total new tokens</span></span>
+<span class="line"><span>inputs = tokenizer(prompt, return_tensors="pt")</span></span>
+<span class="line"><span>input_ids = inputs.input_ids.to(device="cuda")</span></span>
+<span class="line"><span>attention_mask = inputs.attention_mask.to(device="cuda")</span></span>
+<span class="line"><span>output = model.diffusion_generate(</span></span>
+<span class="line"><span>    input_ids,</span></span>
+<span class="line"><span>    attention_mask=attention_mask,</span></span>
+<span class="line"><span>    max_new_tokens=256,</span></span>
+<span class="line"><span>    output_history=True,</span></span>
+<span class="line"><span>    return_dict_in_generate=True,</span></span>
+<span class="line"><span>    steps=256//TOKEN_PER_STEP,</span></span>
+<span class="line"><span>    temperature=0.2,</span></span>
+<span class="line"><span>    top_p=0.95,</span></span>
+<span class="line"><span>    alg="entropy",</span></span>
+<span class="line"><span>    alg_temp=0.,</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>generations = [</span></span>
+<span class="line"><span>    tokenizer.decode(g[len(p) :].tolist())</span></span>
+<span class="line"><span>    for p, g in zip(input_ids, output.sequences)</span></span>
+<span class="line"><span>]</span></span>
+<span class="line"><span>print(generations[0].split(tokenizer.eos_token)[0])</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Output (click to expand)
+출력(확장하려면 클릭)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    # Sort the list to make it easier to find close elements</span></span>
+<span class="line"><span>    numbers.sort()</span></span>
+<span class="line"><span>    # Iterate through the list, checking each adjacent pair</span></span>
+<span class="line"><span>    for i in range(len(numbers) - 1):</span></span>
+<span class="line"><span>        # If the difference between the current and next element is less than the threshold, return True</span></span>
+<span class="line"><span>        if numbers[i + 1] - numbers[i] &#x3C; threshold:</span></span>
+<span class="line"><span>            return True</span></span>
+<span class="line"><span>    # If no such pair is found, return False</span></span>
+<span class="line"><span>    return False </span></span>
+<span class="line"><span></span></span></code></pre>
+<blockquote>
+<p>Given an example input from the HumanEval test, the output of DiffuCoder-Base is a direct completion of the code snippet.
+HumanEval 테스트의 예제 입력이 주어지면 DiffuCoder-Base의 출력은 코드 조각의 직접 완성입니다.</p>
+</blockquote>
+<p>Usage for Instruct model (click to expand)
+Instruct 모델 사용법(확장하려면 클릭)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import torch</span></span>
+<span class="line"><span>from transformers import AutoModel, AutoTokenizer</span></span>
+<span class="line"><span>model_path = "apple/DiffuCoder-7B-cpGRPO"</span></span>
+<span class="line"><span>model = AutoModel.from_pretrained(model_path, torch_dtype=torch.bfloat16, trust_remote_code=True)</span></span>
+<span class="line"><span>tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)</span></span>
+<span class="line"><span>model = model.to("cuda").eval()</span></span>
+<span class="line"><span>query = "Write a function to find the shared elements from the given two lists."</span></span>
+<span class="line"><span>prompt = f"""&#x3C;|im_start|>system</span></span>
+<span class="line"><span>You are a helpful assistant.&#x3C;|im_end|></span></span>
+<span class="line"><span>&#x3C;|im_start|>user</span></span>
+<span class="line"><span>{query.strip()}</span></span>
+<span class="line"><span>&#x3C;|im_end|></span></span>
+<span class="line"><span>&#x3C;|im_start|>assistant</span></span>
+<span class="line"><span>""" ## following the template of qwen; you can also use apply_chat_template function</span></span>
+<span class="line"><span>TOKEN_PER_STEP = 1 # diffusion timesteps * TOKEN_PER_STEP = total new tokens</span></span>
+<span class="line"><span>inputs = tokenizer(prompt, return_tensors="pt")</span></span>
+<span class="line"><span>input_ids = inputs.input_ids.to(device="cuda")</span></span>
+<span class="line"><span>attention_mask = inputs.attention_mask.to(device="cuda")</span></span>
+<span class="line"><span>output = model.diffusion_generate(</span></span>
+<span class="line"><span>    input_ids,</span></span>
+<span class="line"><span>    attention_mask=attention_mask,</span></span>
+<span class="line"><span>    max_new_tokens=256,</span></span>
+<span class="line"><span>    output_history=True,</span></span>
+<span class="line"><span>    return_dict_in_generate=True,</span></span>
+<span class="line"><span>    steps=256//TOKEN_PER_STEP,</span></span>
+<span class="line"><span>    temperature=0.4,</span></span>
+<span class="line"><span>    top_p=0.95,</span></span>
+<span class="line"><span>    alg="entropy",</span></span>
+<span class="line"><span>    alg_temp=0.,</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>generations = [</span></span>
+<span class="line"><span>    tokenizer.decode(g[len(p) :].tolist())</span></span>
+<span class="line"><span>    for p, g in zip(input_ids, output.sequences)</span></span>
+<span class="line"><span>]</span></span>
+<span class="line"><span>print(generations[0].split('&#x3C;|dlm_pad|>')[0])</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Output (click to expand)
+출력(확장하려면 클릭)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Here is the code to solve this problem: </span></span>
+<span class="line"><span>```python</span></span>
+<span class="line"><span>def shared_elements(list1, list2): </span></span>
+<span class="line"><span>  return [value for value in list1 if value in  list2] </span></span>
+<span class="line"><span>```&#x3C;|im_end|> </span></span>
+<span class="line"><span></span></span></code></pre>
+<blockquote>
+<p>Given an example input from the MBPP test, the output of DiffuCoder-cpGRPO is a chat-based response.
+MBPP 테스트의 예제 입력이 주어지면 DiffuCoder-cpGRPO의 출력은 채팅 기반 응답입니다.</p>
+</blockquote>
+<h3 id="demo-데모">Demo 데모</h3>
+<p>🚀 Start the demo and enter any prompt you want!
+🚀 데모를 시작하고 원하는 프롬프트를 입력하세요!</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>python inference_demo.py</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="evaluation-평가">Evaluation 평가</h3>
+<p>The diffusion inference algorithm is based on Dream-7B. The code evaluation is based on <a href="https://github.com/QwenLM/Qwen2.5-Coder/tree/main/qwencoder-eval">Qwen2.5-Coder</a>.
+확산 추론 알고리즘은 Dream-7B를 기반으로 합니다. 코드 평가는 <a href="https://github.com/QwenLM/Qwen2.5-Coder/tree/main/qwencoder-eval">Qwen2.5-Coder</a>를 기반으로 합니다.</p>
+<h2 id="acknowledgments-승인을">Acknowledgments 승인을</h2>
+<p>We sincerely appreciate the following works for DiffuCoder:
+DiffuCoder에 대한 다음 작업에 진심으로 감사드립니다.</p>
+<ul>
+<li>Our data used in pre-training/mid-training/instruction tuning are from <a href="https://huggingface.co/OpenCoder-LLM">OpenCoder</a>.
+사전 학습/중간 학습/명령어 튜닝에 사용된 데이터는 <a href="https://huggingface.co/OpenCoder-LLM">OpenCoder</a>에서 가져온 것입니다.</li>
+<li>Our instruction tuning code is based on <a href="https://github.com/hiyouga/LLaMA-Factory">LLaMA-Factory</a>.
+우리의 명령어 튜닝 코드는 <a href="https://github.com/hiyouga/LLaMA-Factory">LLaMA-Factory</a>를 기반으로 합니다.</li>
+<li>Our coupled-GRPO is built upon <a href="https://github.com/huggingface/open-r1">Open-R1</a> and <a href="https://github.com/dllm-reasoning/d1">d1</a>.
+당사의 결합 GRPO는 <a href="https://github.com/huggingface/open-r1">Open-R1</a> 및 <a href="https://github.com/dllm-reasoning/d1">d1</a>을 기반으로 합니다.</li>
+<li>Our evaluation is built upon <a href="https://github.com/HKUNLP/Dream">Dream</a> and <a href="https://github.com/QwenLM/Qwen2.5-Coder/tree/main/qwencoder-eval">Qwen2.5-Coder</a>.
+우리의 평가는 <a href="https://github.com/HKUNLP/Dream">Dream</a>과 <a href="https://github.com/QwenLM/Qwen2.5-Coder/tree/main/qwencoder-eval">Qwen2.5-Coder</a>를 기반으로 합니다.</li>
+</ul>
+<h2 id="citation-인용">Citation 인용</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@article{gong2025diffucoder,</span></span>
+<span class="line"><span>  title={DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation},</span></span>
+<span class="line"><span>  author={Shansan Gong, Ruixiang Zhang, Huangjie Zheng, Jiatao Gu, Navdeep Jaitly, Lingpeng Kong, Yizhe Zhang},</span></span>
+<span class="line"><span>  year={2025},</span></span>
+<span class="line"><span>  eprint={2506.20639},</span></span>
+<span class="line"><span>  archivePrefix={arXiv},</span></span>
+<span class="line"><span>  primaryClass={cs.CL},</span></span>
+<span class="line"><span>  url={https://arxiv.org/abs/2506.20639},</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre> </article> </div> <script type="module">
+      // 목적: index.json에서 현재 글 메타/썸네일을 찾아 상세 화면에 반영한다.
+      async function hydrateMeta() {
+        try {
+          const BASE = import.meta.env.BASE_URL;
+          const slug = decodeURIComponent(location.pathname.replace(/.*\/post\//,'').replace(/\/?$/,''));
+          const res = await fetch(`${BASE}index.json`);
+          const data = await res.json();
+          const items = (data && data.items) || [];
+          const item = items.find((i) => i.slug === slug);
+          if (!item) return;
+
+          const hero = document.getElementById('hero');
+          const heroImg = document.getElementById('heroImg');
+          const source = document.getElementById('source');
+          const cta = document.getElementById('ctaSource');
+          if (item.thumbnail && hero && heroImg) {
+            heroImg.setAttribute('src', item.thumbnail);
+            hero.style.display = 'block';
+          }
+          if (item.source_url && source && cta) {
+            source.setAttribute('href', item.source_url);
+            cta.setAttribute('href', item.source_url);
+            source.style.display='inline-block';
+            cta.style.display='inline-block';
+          }
+        } catch {}
+      }
+      hydrateMeta();
+
+      // 복사 버튼 제거됨 — 상단에 원문 보기 버튼만 유지
+    </script> </body> </html>
