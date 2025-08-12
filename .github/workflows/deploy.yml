@@ -10,16 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
       - run: npm ci --no-fund --no-audit
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: 0
       - name: Build index
         run: npm run index
       - name: Build site
         run: npm run build
+        env:
+          NODE_OPTIONS: --max-old-space-size=2048
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
