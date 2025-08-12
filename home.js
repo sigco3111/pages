@@ -1352,7 +1352,17 @@ function applyFilters() {
   let list = state.items;
   if (state.category !== "ALL") list = list.filter((i) => i.category === state.category);
   if (state.query) {
-    const fuse = new Fuse(list, { keys: ["title", "category", "source_name", "source_url", "excerpt"], threshold: 0.35 });
+    const SEARCH_KEYS = ["title", "category", "source_name", "excerpt"];
+    const fuse = new Fuse(list, {
+      keys: SEARCH_KEYS,
+      threshold: 0.3,
+      // 조금 더 엄격하게
+      ignoreLocation: true,
+      // 위치 무시, 전체 텍스트 대상으로
+      minMatchCharLength: 2,
+      // 최소 2자 이상일 때 매칭
+      distance: 100
+    });
     list = fuse.search(state.query).map((r) => r.item);
   }
   state.filtered = list;
